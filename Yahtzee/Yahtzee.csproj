@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Yahtzee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Yahtzee.Designer.cs">
+      <DependentUpon>Yahtzee.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\GameScreen.cs">
       <SubType>UserControl</SubType>
@@ -78,8 +78,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Yahtzee.resx">
+      <DependentUpon>Yahtzee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\GameScreen.resx">
       <DependentUpon>GameScreen.cs</DependentUpon>

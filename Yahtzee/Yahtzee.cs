@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Yahtzee
 {
-    public partial class Form1 : Form
+    public partial class Yahtzee : Form
     {
-        public Form1()
+        public Yahtzee()
         {
             InitializeComponent();
         }

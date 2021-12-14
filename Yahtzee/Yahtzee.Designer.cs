@@ -1,7 +1,7 @@
 ﻿
 namespace Yahtzee
 {
-    partial class Form1
+    partial class Yahtzee
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,17 @@ namespace Yahtzee
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // Yahtzee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 761);
-            this.Name = "Form1";
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Yahtzee";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
