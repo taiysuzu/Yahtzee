@@ -16,5 +16,14 @@ namespace Yahtzee
         {
             InitializeComponent();
         }
+
+        private void Yahtzee_Load(object sender, EventArgs e)
+        {
+            // Start the program centred on the Menu Screen
+            MenuScreen ms = new MenuScreen();
+            this.Controls.Add(ms);
+
+            ms.Location = new Point((this.Width - ms.Width) / 2, (this.Height - ms.Height) / 2);
+        }
     }
 }
