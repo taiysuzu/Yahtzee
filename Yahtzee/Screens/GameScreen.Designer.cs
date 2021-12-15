@@ -29,18 +29,32 @@ namespace Yahtzee
         /// </summary>
         private void InitializeComponent()
         {
+            this.scoreCard = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.scoreCard)).BeginInit();
             this.SuspendLayout();
+            // 
+            // scoreCard
+            // 
+            this.scoreCard.Location = new System.Drawing.Point(393, 128);
+            this.scoreCard.Name = "scoreCard";
+            this.scoreCard.Size = new System.Drawing.Size(100, 50);
+            this.scoreCard.TabIndex = 0;
+            this.scoreCard.TabStop = false;
             // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.scoreCard);
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(1200, 600);
+            ((System.ComponentModel.ISupportInitialize)(this.scoreCard)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox scoreCard;
     }
 }
