@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Dice.cs" />
+    <Compile Include="Classes\Highscore.cs" />
     <Compile Include="Screens\GameOver.cs">
       <SubType>UserControl</SubType>
     </Compile>
