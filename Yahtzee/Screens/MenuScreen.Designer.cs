@@ -33,6 +33,7 @@ namespace Yahtzee
             this.startButton = new System.Windows.Forms.Button();
             this.howToPlayButton = new System.Windows.Forms.Button();
             this.highscoreButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -74,11 +75,22 @@ namespace Yahtzee
             this.highscoreButton.UseVisualStyleBackColor = true;
             this.highscoreButton.Click += new System.EventHandler(this.highscoreButton_Click);
             // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(484, 449);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.TabIndex = 4;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // MenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.highscoreButton);
             this.Controls.Add(this.howToPlayButton);
             this.Controls.Add(this.startButton);
@@ -96,5 +108,6 @@ namespace Yahtzee
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button howToPlayButton;
         private System.Windows.Forms.Button highscoreButton;
+        private System.Windows.Forms.Button exitButton;
     }
 }

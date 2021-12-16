@@ -49,5 +49,10 @@ namespace Yahtzee
             form.Controls.Add(hs);
             form.Controls.Remove(this);
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
