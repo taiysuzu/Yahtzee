@@ -81,6 +81,18 @@ namespace Yahtzee.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to POG
+        ///1534
+        ///aaa
+        ///234.
+        /// </summary>
+        internal static string Highscores {
+            get {
+                return ResourceManager.GetString("Highscores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap mainscreenDice {

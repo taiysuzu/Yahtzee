@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Taiyo + Charlie
+ * ICS4U
+ * Mr. T
+ * Date of Submission
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +25,7 @@ namespace Yahtzee
             LoadScores();
         }
 
-        public List<Highscore> scores = new List<Highscore>();
+        public static List<Highscore> scores = new List<Highscore>();
 
         private void Yahtzee_Load(object sender, EventArgs e)
         {
@@ -32,7 +38,7 @@ namespace Yahtzee
 
         private void LoadScores()
         {
-            List<string> scoresStrings = File.ReadAllLines("Highscores.txt").ToList();
+            List<string> scoresStrings = File.ReadAllLines(Application.StartupPath + "/Resources/Highscores.txt").ToList();
 
             for (int i = 0; i < scoresStrings.Count; i += 2)
             {
@@ -51,7 +57,7 @@ namespace Yahtzee
             {
                 tempList.Add(hs.name);
                 tempList.Add(Convert.ToString(hs.score));
-                File.WriteAllLines("Highscores.txt", tempList);
+                File.WriteAllLines(Application.StartupPath + "/Resources/Highscores.txt", tempList);
             }
         }
     }
