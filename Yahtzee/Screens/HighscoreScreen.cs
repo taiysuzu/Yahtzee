@@ -34,5 +34,16 @@ namespace Yahtzee
                 highScoreLabel.Text += $"{hs.name} {hs.score}\n";
             }
         }
+
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+            Form form = this.FindForm();
+
+            MenuScreen ms = new MenuScreen();
+            ms.Location = new Point((form.Width - ms.Width) / 2, (form.Height - ms.Height) / 2);
+
+            form.Controls.Add(ms);
+            form.Controls.Remove(this);
+        }
     }
 }
