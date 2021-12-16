@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\MenuScreen.png" />
     <None Include="Resources\ArteFact.png" />
     <None Include="Resources\aeed7284c58842b59fe325fa2273c3dc-0001.jpg" />
     <Content Include="Resources\Highscores.txt">
