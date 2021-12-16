@@ -31,6 +31,7 @@ namespace Yahtzee
         {
             this.highScoreLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.menuButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // highScoreLabel
@@ -56,11 +57,22 @@ namespace Yahtzee
             this.label2.Text = "Highscores";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // menuButton
+            // 
+            this.menuButton.Location = new System.Drawing.Point(550, 500);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(100, 40);
+            this.menuButton.TabIndex = 3;
+            this.menuButton.Text = "Menu";
+            this.menuButton.UseVisualStyleBackColor = true;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
+            // 
             // HighscoreScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
+            this.Controls.Add(this.menuButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.highScoreLabel);
             this.Name = "HighscoreScreen";
@@ -73,5 +85,6 @@ namespace Yahtzee
 
         private System.Windows.Forms.Label highScoreLabel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button menuButton;
     }
 }
