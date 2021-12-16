@@ -29,25 +29,15 @@ namespace Yahtzee
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
             this.howToPlayButton = new System.Windows.Forms.Button();
             this.highscoreButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(368, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "yahtzee";
-            // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(306, 319);
+            this.startButton.Location = new System.Drawing.Point(297, 440);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
             this.startButton.TabIndex = 1;
@@ -57,7 +47,7 @@ namespace Yahtzee
             // 
             // howToPlayButton
             // 
-            this.howToPlayButton.Location = new System.Drawing.Point(472, 319);
+            this.howToPlayButton.Location = new System.Drawing.Point(480, 423);
             this.howToPlayButton.Name = "howToPlayButton";
             this.howToPlayButton.Size = new System.Drawing.Size(75, 23);
             this.howToPlayButton.TabIndex = 2;
@@ -67,7 +57,7 @@ namespace Yahtzee
             // 
             // highscoreButton
             // 
-            this.highscoreButton.Location = new System.Drawing.Point(620, 319);
+            this.highscoreButton.Location = new System.Drawing.Point(629, 449);
             this.highscoreButton.Name = "highscoreButton";
             this.highscoreButton.Size = new System.Drawing.Size(75, 23);
             this.highscoreButton.TabIndex = 3;
@@ -77,7 +67,7 @@ namespace Yahtzee
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(484, 449);
+            this.exitButton.Location = new System.Drawing.Point(814, 497);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 4;
@@ -90,21 +80,20 @@ namespace Yahtzee
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BackgroundImage = global::Yahtzee.Properties.Resources.MenuScreen;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.highscoreButton);
             this.Controls.Add(this.howToPlayButton);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "MenuScreen";
             this.Size = new System.Drawing.Size(1200, 600);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button howToPlayButton;
         private System.Windows.Forms.Button highscoreButton;
