@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\png-transparent-black-and-white-car-comics-speech-bubble-conversation-bar-logo-angle-white-text.png" />
     <None Include="Resources\ArteFact.png" />
     <None Include="Resources\aeed7284c58842b59fe325fa2273c3dc-0001.jpg" />
     <Content Include="Resources\Highscores.txt">
