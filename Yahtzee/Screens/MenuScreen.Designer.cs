@@ -37,9 +37,9 @@ namespace Yahtzee
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(297, 440);
+            this.startButton.Location = new System.Drawing.Point(250, 450);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(75, 23);
+            this.startButton.Size = new System.Drawing.Size(100, 50);
             this.startButton.TabIndex = 1;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
@@ -47,9 +47,9 @@ namespace Yahtzee
             // 
             // howToPlayButton
             // 
-            this.howToPlayButton.Location = new System.Drawing.Point(480, 423);
+            this.howToPlayButton.Location = new System.Drawing.Point(450, 450);
             this.howToPlayButton.Name = "howToPlayButton";
-            this.howToPlayButton.Size = new System.Drawing.Size(75, 23);
+            this.howToPlayButton.Size = new System.Drawing.Size(100, 50);
             this.howToPlayButton.TabIndex = 2;
             this.howToPlayButton.Text = "How to Play";
             this.howToPlayButton.UseVisualStyleBackColor = true;
@@ -57,9 +57,9 @@ namespace Yahtzee
             // 
             // highscoreButton
             // 
-            this.highscoreButton.Location = new System.Drawing.Point(629, 449);
+            this.highscoreButton.Location = new System.Drawing.Point(650, 450);
             this.highscoreButton.Name = "highscoreButton";
-            this.highscoreButton.Size = new System.Drawing.Size(75, 23);
+            this.highscoreButton.Size = new System.Drawing.Size(100, 50);
             this.highscoreButton.TabIndex = 3;
             this.highscoreButton.Text = "Highscores";
             this.highscoreButton.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@ namespace Yahtzee
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(814, 497);
+            this.exitButton.Location = new System.Drawing.Point(850, 450);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.Size = new System.Drawing.Size(100, 50);
             this.exitButton.TabIndex = 4;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
