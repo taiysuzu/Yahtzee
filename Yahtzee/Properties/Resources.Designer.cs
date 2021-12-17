@@ -81,6 +81,66 @@ namespace Yahtzee.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Die1 {
+            get {
+                object obj = ResourceManager.GetObject("Die1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Die2 {
+            get {
+                object obj = ResourceManager.GetObject("Die2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Die3 {
+            get {
+                object obj = ResourceManager.GetObject("Die3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Die4 {
+            get {
+                object obj = ResourceManager.GetObject("Die4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Die5 {
+            get {
+                object obj = ResourceManager.GetObject("Die5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Die6 {
+            get {
+                object obj = ResourceManager.GetObject("Die6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to POG
         ///1534
         ///aaa
@@ -89,6 +149,16 @@ namespace Yahtzee.Properties {
         internal static string Highscores {
             get {
                 return ResourceManager.GetString("Highscores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hiscore__1_ {
+            get {
+                object obj = ResourceManager.GetObject("hiscore__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

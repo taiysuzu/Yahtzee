@@ -129,9 +129,16 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\hiscore %281%29.png" />
     <None Include="Resources\MenuScreen.png" />
     <None Include="Resources\ArteFact.png" />
     <None Include="Resources\aeed7284c58842b59fe325fa2273c3dc-0001.jpg" />
+    <None Include="Resources\Die6.png" />
+    <None Include="Resources\Die5.png" />
+    <None Include="Resources\Die4.png" />
+    <None Include="Resources\Die3.png" />
+    <None Include="Resources\Die2.png" />
+    <None Include="Resources\Die1.png" />
     <Content Include="Resources\Highscores.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
