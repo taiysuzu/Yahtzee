@@ -38,6 +38,7 @@ namespace Yahtzee
             // 
             this.highScoreLabel.BackColor = System.Drawing.Color.Firebrick;
             this.highScoreLabel.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highScoreLabel.ForeColor = System.Drawing.Color.Black;
             this.highScoreLabel.Location = new System.Drawing.Point(300, 60);
             this.highScoreLabel.Name = "highScoreLabel";
             this.highScoreLabel.Size = new System.Drawing.Size(600, 540);
