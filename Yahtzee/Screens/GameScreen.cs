@@ -12,9 +12,22 @@ namespace Yahtzee
 {
     public partial class GameScreen : UserControl
     {
+        List<Dice> diceList = new List<Dice> { };
+
         public GameScreen()
         {
             InitializeComponent();
+            OnStart();
+        }
+
+        private void OnStart()
+        {
+
+        }
+
+        private void OnEnd()
+        {
+
         }
     }
 }
