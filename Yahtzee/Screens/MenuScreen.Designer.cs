@@ -40,7 +40,7 @@ namespace Yahtzee
             this.startButton.BackColor = System.Drawing.Color.Transparent;
             this.startButton.FlatAppearance.BorderSize = 0;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.ForeColor = System.Drawing.Color.White;
             this.startButton.Location = new System.Drawing.Point(241, 450);
             this.startButton.Name = "startButton";
@@ -55,7 +55,7 @@ namespace Yahtzee
             this.howToPlayButton.BackColor = System.Drawing.Color.Transparent;
             this.howToPlayButton.FlatAppearance.BorderSize = 0;
             this.howToPlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.howToPlayButton.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.howToPlayButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.howToPlayButton.ForeColor = System.Drawing.Color.White;
             this.howToPlayButton.Location = new System.Drawing.Point(435, 450);
             this.howToPlayButton.Name = "howToPlayButton";
@@ -70,7 +70,7 @@ namespace Yahtzee
             this.highscoreButton.BackColor = System.Drawing.Color.Transparent;
             this.highscoreButton.FlatAppearance.BorderSize = 0;
             this.highscoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.highscoreButton.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highscoreButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.highscoreButton.ForeColor = System.Drawing.Color.White;
             this.highscoreButton.Location = new System.Drawing.Point(650, 450);
             this.highscoreButton.Name = "highscoreButton";
@@ -85,7 +85,7 @@ namespace Yahtzee
             this.exitButton.BackColor = System.Drawing.Color.Transparent;
             this.exitButton.FlatAppearance.BorderSize = 0;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.White;
             this.exitButton.Location = new System.Drawing.Point(850, 450);
             this.exitButton.Name = "exitButton";
