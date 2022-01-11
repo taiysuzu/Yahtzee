@@ -55,7 +55,7 @@ namespace Yahtzee
             nameInput.Visible = true;
             nameInputButton.Visible = true;
 
-            nameEntryLabel.Text = $"\n\n\n\n\n\n\nYou achieved a score of {score}! \n\nEnter your initials below. ";
+            nameEntryLabel.Text = $"\n\n\n\n\n\n\nYou achieved a score of {score}! \n\nEnter your initials below.";
         }
 
         private void nameInputButton_Click(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace Yahtzee
             }
             else
             {
-                nameEntryLabel.Text += $"\n\n\n\n\n\n\nPlease enter 3 uppercase characters.";
+                nameEntryLabel.Text += $"\n\n\n\n\n\n\n\n\nPlease enter 3 uppercase characters.";
             }
         }
 
