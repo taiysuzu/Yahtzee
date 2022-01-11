@@ -29,6 +29,7 @@ namespace Yahtzee
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.scoreCard = new System.Windows.Forms.PictureBox();
             this.diceBox1 = new System.Windows.Forms.PictureBox();
             this.diceBox4 = new System.Windows.Forms.PictureBox();
@@ -36,6 +37,8 @@ namespace Yahtzee
             this.diceBox6 = new System.Windows.Forms.PictureBox();
             this.diceBox3 = new System.Windows.Forms.PictureBox();
             this.diceBox2 = new System.Windows.Forms.PictureBox();
+            this.rollButton = new System.Windows.Forms.Button();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.scoreCard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox4)).BeginInit();
@@ -101,10 +104,28 @@ namespace Yahtzee
             this.diceBox2.TabIndex = 6;
             this.diceBox2.TabStop = false;
             // 
+            // rollButton
+            // 
+            this.rollButton.FlatAppearance.BorderSize = 0;
+            this.rollButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rollButton.Location = new System.Drawing.Point(791, 512);
+            this.rollButton.Name = "rollButton";
+            this.rollButton.Size = new System.Drawing.Size(75, 23);
+            this.rollButton.TabIndex = 7;
+            this.rollButton.Text = "Roll Dice";
+            this.rollButton.UseVisualStyleBackColor = true;
+            this.rollButton.Click += new System.EventHandler(this.rollButton_Click);
+            // 
+            // gameTimer
+            // 
+            this.gameTimer.Interval = 20;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.rollButton);
             this.Controls.Add(this.diceBox2);
             this.Controls.Add(this.diceBox3);
             this.Controls.Add(this.diceBox6);
@@ -134,5 +155,7 @@ namespace Yahtzee
         private System.Windows.Forms.PictureBox diceBox6;
         private System.Windows.Forms.PictureBox diceBox3;
         private System.Windows.Forms.PictureBox diceBox2;
+        private System.Windows.Forms.Button rollButton;
+        private System.Windows.Forms.Timer gameTimer;
     }
 }

@@ -39,6 +39,7 @@ namespace Yahtzee
             // 
             this.startButton.BackColor = System.Drawing.Color.Transparent;
             this.startButton.FlatAppearance.BorderSize = 0;
+            this.startButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.ForeColor = System.Drawing.Color.White;
@@ -54,6 +55,7 @@ namespace Yahtzee
             // 
             this.howToPlayButton.BackColor = System.Drawing.Color.Transparent;
             this.howToPlayButton.FlatAppearance.BorderSize = 0;
+            this.howToPlayButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.howToPlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.howToPlayButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.howToPlayButton.ForeColor = System.Drawing.Color.White;
@@ -69,6 +71,7 @@ namespace Yahtzee
             // 
             this.highscoreButton.BackColor = System.Drawing.Color.Transparent;
             this.highscoreButton.FlatAppearance.BorderSize = 0;
+            this.highscoreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.highscoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.highscoreButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.highscoreButton.ForeColor = System.Drawing.Color.White;
@@ -84,6 +87,7 @@ namespace Yahtzee
             // 
             this.exitButton.BackColor = System.Drawing.Color.Transparent;
             this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.White;
