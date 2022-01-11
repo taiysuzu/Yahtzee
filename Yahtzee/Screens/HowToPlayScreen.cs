@@ -19,6 +19,7 @@ namespace Yahtzee
 
         private void menuButton_Click(object sender, EventArgs e)
         {
+            //return to menu
             Form form = this.FindForm();
 
             MenuScreen ms = new MenuScreen();

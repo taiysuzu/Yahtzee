@@ -19,6 +19,7 @@ namespace Yahtzee
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            //starts game / opens game screen
             Form form = this.FindForm();
 
             GameScreen gs = new GameScreen();
@@ -30,6 +31,7 @@ namespace Yahtzee
 
         private void howToPlayButton_Click(object sender, EventArgs e)
         {
+            //opens instructions
             Form form = this.FindForm();
 
             HowToPlayScreen htps = new HowToPlayScreen();
@@ -41,6 +43,7 @@ namespace Yahtzee
 
         private void highscoreButton_Click(object sender, EventArgs e)
         {
+            //opens high scores
             Form form = this.FindForm();
 
             HighscoreScreen hs = new HighscoreScreen();
@@ -52,6 +55,7 @@ namespace Yahtzee
 
         private void exitButton_Click(object sender, EventArgs e)
         {
+            //quits
             Application.Exit();   
         }
     }
