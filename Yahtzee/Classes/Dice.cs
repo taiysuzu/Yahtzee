@@ -6,19 +6,13 @@ using System.Threading.Tasks;
 
 namespace Yahtzee
 {
-    class Dice
+    public class Dice
     {
-        int value;
-        Random randGen = new Random();
+        public int value;
 
-        Dice(int _value)
+        public Dice(int _value)
         {
             value = _value;
-        }
-
-        void Roll()
-        {
-            value = randGen.Next(1, 6);
         }
     }
 }
