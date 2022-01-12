@@ -30,7 +30,6 @@ namespace Yahtzee
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.scoreCard = new System.Windows.Forms.PictureBox();
             this.diceBox1 = new System.Windows.Forms.PictureBox();
             this.diceBox4 = new System.Windows.Forms.PictureBox();
             this.diceBox5 = new System.Windows.Forms.PictureBox();
@@ -43,7 +42,6 @@ namespace Yahtzee
             this.nameEntryLabel = new System.Windows.Forms.Label();
             this.test_Endgame = new System.Windows.Forms.Button();
             this.nameInputButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.scoreCard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox5)).BeginInit();
@@ -51,14 +49,6 @@ namespace Yahtzee
             ((System.ComponentModel.ISupportInitialize)(this.diceBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // scoreCard
-            // 
-            this.scoreCard.Location = new System.Drawing.Point(3, 3);
-            this.scoreCard.Name = "scoreCard";
-            this.scoreCard.Size = new System.Drawing.Size(481, 594);
-            this.scoreCard.TabIndex = 0;
-            this.scoreCard.TabStop = false;
             // 
             // diceBox1
             // 
@@ -175,10 +165,9 @@ namespace Yahtzee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.nameInput);
-            this.Controls.Add(this.nameInputButton);
+            this.BackgroundImage = global::Yahtzee.Properties.Resources.GameScreen;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Controls.Add(this.test_Endgame);
-            this.Controls.Add(this.nameEntryLabel);
             this.Controls.Add(this.rollButton);
             this.Controls.Add(this.diceBox2);
             this.Controls.Add(this.diceBox3);
@@ -186,10 +175,12 @@ namespace Yahtzee
             this.Controls.Add(this.diceBox5);
             this.Controls.Add(this.diceBox4);
             this.Controls.Add(this.diceBox1);
-            this.Controls.Add(this.scoreCard);
+            this.Controls.Add(this.nameInput);
+            this.Controls.Add(this.nameInputButton);
+            this.Controls.Add(this.nameEntryLabel);
+            this.DoubleBuffered = true;
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(1200, 600);
-            ((System.ComponentModel.ISupportInitialize)(this.scoreCard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox5)).EndInit();
@@ -202,8 +193,6 @@ namespace Yahtzee
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox scoreCard;
         private System.Windows.Forms.PictureBox diceBox1;
         private System.Windows.Forms.PictureBox diceBox4;
         private System.Windows.Forms.PictureBox diceBox5;
