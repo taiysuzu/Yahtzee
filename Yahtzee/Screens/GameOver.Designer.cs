@@ -46,11 +46,16 @@ namespace Yahtzee
             // 
             // menuButton
             // 
-            this.menuButton.Location = new System.Drawing.Point(550, 500);
+            this.menuButton.FlatAppearance.BorderSize = 0;
+            this.menuButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.menuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuButton.Font = new System.Drawing.Font("Mongolian Baiti", 20.25F);
+            this.menuButton.ForeColor = System.Drawing.Color.White;
+            this.menuButton.Location = new System.Drawing.Point(500, 500);
             this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(100, 40);
+            this.menuButton.Size = new System.Drawing.Size(200, 80);
             this.menuButton.TabIndex = 4;
-            this.menuButton.Text = "Menu";
+            this.menuButton.Text = "Main Menu";
             this.menuButton.UseVisualStyleBackColor = true;
             this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
             // 
