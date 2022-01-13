@@ -38,6 +38,9 @@ namespace Yahtzee
                 diceList.Add(dice);
             }
 
+            //reset game values
+            score = 0;
+
             //begin game loop
             gameTimer.Enabled = true;
         }
