@@ -72,7 +72,7 @@ namespace Yahtzee
             // diceBox1
             // 
             this.diceBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.diceBox1.Location = new System.Drawing.Point(561, 34);
+            this.diceBox1.Location = new System.Drawing.Point(550, 100);
             this.diceBox1.Name = "diceBox1";
             this.diceBox1.Size = new System.Drawing.Size(180, 180);
             this.diceBox1.TabIndex = 1;
@@ -81,7 +81,7 @@ namespace Yahtzee
             // diceBox4
             // 
             this.diceBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.diceBox4.Location = new System.Drawing.Point(435, 304);
+            this.diceBox4.Location = new System.Drawing.Point(420, 304);
             this.diceBox4.Name = "diceBox4";
             this.diceBox4.Size = new System.Drawing.Size(180, 180);
             this.diceBox4.TabIndex = 2;
@@ -90,7 +90,7 @@ namespace Yahtzee
             // diceBox5
             // 
             this.diceBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.diceBox5.Location = new System.Drawing.Point(995, 314);
+            this.diceBox5.Location = new System.Drawing.Point(952, 304);
             this.diceBox5.Name = "diceBox5";
             this.diceBox5.Size = new System.Drawing.Size(180, 180);
             this.diceBox5.TabIndex = 3;
@@ -99,7 +99,7 @@ namespace Yahtzee
             // diceBox3
             // 
             this.diceBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.diceBox3.Location = new System.Drawing.Point(851, 68);
+            this.diceBox3.Location = new System.Drawing.Point(822, 100);
             this.diceBox3.Name = "diceBox3";
             this.diceBox3.Size = new System.Drawing.Size(180, 180);
             this.diceBox3.TabIndex = 5;
@@ -108,7 +108,7 @@ namespace Yahtzee
             // diceBox2
             // 
             this.diceBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.diceBox2.Location = new System.Drawing.Point(686, 275);
+            this.diceBox2.Location = new System.Drawing.Point(686, 304);
             this.diceBox2.Name = "diceBox2";
             this.diceBox2.Size = new System.Drawing.Size(180, 180);
             this.diceBox2.TabIndex = 6;
