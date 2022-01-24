@@ -124,5 +124,10 @@ namespace Yahtzee
         {
             OnEnd();
         }
+
+        private void GameScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
