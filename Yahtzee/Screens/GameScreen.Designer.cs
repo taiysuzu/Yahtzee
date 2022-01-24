@@ -61,6 +61,7 @@ namespace Yahtzee
             this.threesLabel = new System.Windows.Forms.Label();
             this.twosLabel = new System.Windows.Forms.Label();
             this.acesLabel = new System.Windows.Forms.Label();
+            this.backgroundLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox5)).BeginInit();
@@ -397,6 +398,14 @@ namespace Yahtzee
             this.acesLabel.TabIndex = 30;
             this.acesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // backgroundLabel
+            // 
+            this.backgroundLabel.BackColor = System.Drawing.Color.Crimson;
+            this.backgroundLabel.Location = new System.Drawing.Point(357, 0);
+            this.backgroundLabel.Name = "backgroundLabel";
+            this.backgroundLabel.Size = new System.Drawing.Size(843, 600);
+            this.backgroundLabel.TabIndex = 31;
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,6 +442,7 @@ namespace Yahtzee
             this.Controls.Add(this.nameInput);
             this.Controls.Add(this.nameInputButton);
             this.Controls.Add(this.nameEntryLabel);
+            this.Controls.Add(this.backgroundLabel);
             this.DoubleBuffered = true;
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(1200, 600);
@@ -480,5 +490,6 @@ namespace Yahtzee
         private System.Windows.Forms.Label threesLabel;
         private System.Windows.Forms.Label twosLabel;
         private System.Windows.Forms.Label acesLabel;
+        private System.Windows.Forms.Label backgroundLabel;
     }
 }
