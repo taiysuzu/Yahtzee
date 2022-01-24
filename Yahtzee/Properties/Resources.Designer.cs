@@ -141,10 +141,19 @@ namespace Yahtzee.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GameScreen {
+            get {
+                object obj = ResourceManager.GetObject("GameScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to POG
         ///1534
-        ///aaa
-        ///234.
+        ///.
         /// </summary>
         internal static string Highscores {
             get {
@@ -158,6 +167,16 @@ namespace Yahtzee.Properties {
         internal static System.Drawing.Bitmap hiscore__1_ {
             get {
                 object obj = ResourceManager.GetObject("hiscore__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HowtoPlayScreen {
+            get {
+                object obj = ResourceManager.GetObject("HowtoPlayScreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

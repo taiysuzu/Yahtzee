@@ -19,7 +19,7 @@ namespace Yahtzee
         }
 
         private void SortScores()
-        {                                       //sort scores
+        {   //sort scores
             Yahtzee.scores = Yahtzee.scores.OrderByDescending(x => x.score).ThenBy(x => x.name).ToList();
 
             while (Yahtzee.scores.Count > 10)   //remove smallest score if more than 10 scores are saved

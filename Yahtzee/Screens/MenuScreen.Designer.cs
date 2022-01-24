@@ -37,42 +37,66 @@ namespace Yahtzee
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(250, 450);
+            this.startButton.BackColor = System.Drawing.Color.Transparent;
+            this.startButton.FlatAppearance.BorderSize = 0;
+            this.startButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startButton.ForeColor = System.Drawing.Color.White;
+            this.startButton.Location = new System.Drawing.Point(241, 450);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(100, 50);
             this.startButton.TabIndex = 1;
             this.startButton.Text = "Start";
-            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // howToPlayButton
             // 
-            this.howToPlayButton.Location = new System.Drawing.Point(450, 450);
+            this.howToPlayButton.BackColor = System.Drawing.Color.Transparent;
+            this.howToPlayButton.FlatAppearance.BorderSize = 0;
+            this.howToPlayButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.howToPlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.howToPlayButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.howToPlayButton.ForeColor = System.Drawing.Color.White;
+            this.howToPlayButton.Location = new System.Drawing.Point(435, 450);
             this.howToPlayButton.Name = "howToPlayButton";
-            this.howToPlayButton.Size = new System.Drawing.Size(100, 50);
+            this.howToPlayButton.Size = new System.Drawing.Size(128, 50);
             this.howToPlayButton.TabIndex = 2;
             this.howToPlayButton.Text = "How to Play";
-            this.howToPlayButton.UseVisualStyleBackColor = true;
+            this.howToPlayButton.UseVisualStyleBackColor = false;
             this.howToPlayButton.Click += new System.EventHandler(this.howToPlayButton_Click);
             // 
             // highscoreButton
             // 
+            this.highscoreButton.BackColor = System.Drawing.Color.Transparent;
+            this.highscoreButton.FlatAppearance.BorderSize = 0;
+            this.highscoreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.highscoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.highscoreButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highscoreButton.ForeColor = System.Drawing.Color.White;
             this.highscoreButton.Location = new System.Drawing.Point(650, 450);
             this.highscoreButton.Name = "highscoreButton";
-            this.highscoreButton.Size = new System.Drawing.Size(100, 50);
+            this.highscoreButton.Size = new System.Drawing.Size(114, 50);
             this.highscoreButton.TabIndex = 3;
             this.highscoreButton.Text = "Highscores";
-            this.highscoreButton.UseVisualStyleBackColor = true;
+            this.highscoreButton.UseVisualStyleBackColor = false;
             this.highscoreButton.Click += new System.EventHandler(this.highscoreButton_Click);
             // 
             // exitButton
             // 
+            this.exitButton.BackColor = System.Drawing.Color.Transparent;
+            this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.ForeColor = System.Drawing.Color.White;
             this.exitButton.Location = new System.Drawing.Point(850, 450);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(100, 50);
             this.exitButton.TabIndex = 4;
             this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // MenuScreen

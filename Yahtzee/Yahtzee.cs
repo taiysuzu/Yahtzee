@@ -1,7 +1,7 @@
 ﻿/* Taiyo + Charlie
  * ICS4U
  * Mr. T
- * Date of Submission
+ * Jan 26, 2022
  */
 
 using System;
@@ -38,6 +38,7 @@ namespace Yahtzee
 
         private void LoadScores()
         {
+            //loads highscores from txt
             List<string> scoresStrings = File.ReadAllLines(Application.StartupPath + "/Resources/Highscores.txt").ToList();
 
             for (int i = 0; i < scoresStrings.Count; i += 2)
@@ -52,6 +53,7 @@ namespace Yahtzee
 
         private void Yahtzee_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //saves highscores to txt
             List<string> tempList = new List<string>();
             foreach (Highscore hs in scores)
             {

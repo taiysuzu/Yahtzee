@@ -6,19 +6,27 @@ using System.Threading.Tasks;
 
 namespace Yahtzee
 {
-    class Dice
+    public class Dice
     {
-        int value;
+        public int value;
+        public bool frozen = false;
+
         Random randGen = new Random();
 
-        Dice(int _value)
+        public Dice(int _value)
         {
             value = _value;
         }
 
-        void Roll()
+        public void Roll()
         {
-            value = randGen.Next(1, 6);
+            if (frozen == false)
+            {
+                value = randGen.Next(1, 7);
+            }
+            else
+            {
+            }
         }
     }
 }

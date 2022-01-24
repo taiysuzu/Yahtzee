@@ -29,6 +29,7 @@ namespace Yahtzee
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Yahtzee));
             this.SuspendLayout();
             // 
             // Yahtzee
@@ -39,9 +40,10 @@ namespace Yahtzee
             this.ClientSize = new System.Drawing.Size(1200, 600);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Yahtzee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Yahtzee";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Yahtzee_FormClosed);
             this.Load += new System.EventHandler(this.Yahtzee_Load);

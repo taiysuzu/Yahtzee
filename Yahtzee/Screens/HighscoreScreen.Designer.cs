@@ -36,23 +36,27 @@ namespace Yahtzee
             // highScoreLabel
             // 
             this.highScoreLabel.BackColor = System.Drawing.Color.Transparent;
-            this.highScoreLabel.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.highScoreLabel.ForeColor = System.Drawing.Color.Black;
-            this.highScoreLabel.Location = new System.Drawing.Point(400, 60);
+            this.highScoreLabel.Location = new System.Drawing.Point(400, 84);
             this.highScoreLabel.Name = "highScoreLabel";
-            this.highScoreLabel.Size = new System.Drawing.Size(400, 540);
+            this.highScoreLabel.Size = new System.Drawing.Size(400, 516);
             this.highScoreLabel.TabIndex = 0;
             this.highScoreLabel.Text = "label1";
             this.highScoreLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // menuButton
             // 
-            this.menuButton.Location = new System.Drawing.Point(550, 500);
+            this.menuButton.BackColor = System.Drawing.Color.Firebrick;
+            this.menuButton.FlatAppearance.BorderSize = 0;
+            this.menuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuButton.Font = new System.Drawing.Font("Mongolian Baiti", 20.25F);
+            this.menuButton.Location = new System.Drawing.Point(500, 500);
             this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(100, 40);
+            this.menuButton.Size = new System.Drawing.Size(200, 80);
             this.menuButton.TabIndex = 3;
-            this.menuButton.Text = "Menu";
-            this.menuButton.UseVisualStyleBackColor = true;
+            this.menuButton.Text = "Main Menu";
+            this.menuButton.UseVisualStyleBackColor = false;
             this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
             // 
             // HighscoreScreen
