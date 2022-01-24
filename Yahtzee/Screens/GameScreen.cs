@@ -13,10 +13,13 @@ namespace Yahtzee
     public partial class GameScreen : UserControl
     {
         #region Global Values
-        Random randGen = new Random();
+        public static Random randGen = new Random();
 
-        //lists
-        List<Dice> diceList = new List<Dice> { };
+        //lists - dice
+        List<Dice> diceList = new List<Dice>();
+        List<PictureBox> diceBoxList = new List<PictureBox>();
+        List<Image> diceImageList = new List<Image> { Properties.Resources.Die1, Properties.Resources.Die2, Properties.Resources.Die3,
+            Properties.Resources.Die4, Properties.Resources.Die5, Properties.Resources.Die6};
 
         //score / highscore objects
         int score;
@@ -37,6 +40,13 @@ namespace Yahtzee
                 Dice dice = new Dice(randGen.Next(1, 7));
                 diceList.Add(dice);
             }
+
+            //add all dice picture boxes to list
+            diceBoxList.Add(diceBox1);
+            diceBoxList.Add(diceBox2);
+            diceBoxList.Add(diceBox3);
+            diceBoxList.Add(diceBox4);
+            diceBoxList.Add(diceBox5);
 
             //reset game values
             score = 0;
@@ -93,7 +103,11 @@ namespace Yahtzee
 
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
-
+            for (int i = 0; i < diceBoxList.Count; i++)
+            {
+                //paints dice images based on dice values
+                diceBoxList[i].BackgroundImage = diceImageList[diceList[i].value - 1];
+            }
         }
 
         private void rollButton_Click(object sender, EventArgs e)
@@ -103,6 +117,7 @@ namespace Yahtzee
                 //randomize dice values (roll the dice)
                 dice.Roll();
             }
+            Refresh();
         }
 
         private void test_Endgame_Click(object sender, EventArgs e)

@@ -33,7 +33,6 @@ namespace Yahtzee
             this.diceBox1 = new System.Windows.Forms.PictureBox();
             this.diceBox4 = new System.Windows.Forms.PictureBox();
             this.diceBox5 = new System.Windows.Forms.PictureBox();
-            this.diceBox6 = new System.Windows.Forms.PictureBox();
             this.diceBox3 = new System.Windows.Forms.PictureBox();
             this.diceBox2 = new System.Windows.Forms.PictureBox();
             this.rollButton = new System.Windows.Forms.Button();
@@ -46,13 +45,13 @@ namespace Yahtzee
             ((System.ComponentModel.ISupportInitialize)(this.diceBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diceBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // diceBox1
             // 
+            this.diceBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.diceBox1.Location = new System.Drawing.Point(435, 118);
             this.diceBox1.Name = "diceBox1";
             this.diceBox1.Size = new System.Drawing.Size(180, 180);
@@ -61,6 +60,7 @@ namespace Yahtzee
             // 
             // diceBox4
             // 
+            this.diceBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.diceBox4.Location = new System.Drawing.Point(435, 304);
             this.diceBox4.Name = "diceBox4";
             this.diceBox4.Size = new System.Drawing.Size(180, 180);
@@ -69,22 +69,16 @@ namespace Yahtzee
             // 
             // diceBox5
             // 
+            this.diceBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.diceBox5.Location = new System.Drawing.Point(686, 304);
             this.diceBox5.Name = "diceBox5";
             this.diceBox5.Size = new System.Drawing.Size(180, 180);
             this.diceBox5.TabIndex = 3;
             this.diceBox5.TabStop = false;
             // 
-            // diceBox6
-            // 
-            this.diceBox6.Location = new System.Drawing.Point(938, 304);
-            this.diceBox6.Name = "diceBox6";
-            this.diceBox6.Size = new System.Drawing.Size(180, 180);
-            this.diceBox6.TabIndex = 4;
-            this.diceBox6.TabStop = false;
-            // 
             // diceBox3
             // 
+            this.diceBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.diceBox3.Location = new System.Drawing.Point(938, 118);
             this.diceBox3.Name = "diceBox3";
             this.diceBox3.Size = new System.Drawing.Size(180, 180);
@@ -93,6 +87,7 @@ namespace Yahtzee
             // 
             // diceBox2
             // 
+            this.diceBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.diceBox2.Location = new System.Drawing.Point(686, 118);
             this.diceBox2.Name = "diceBox2";
             this.diceBox2.Size = new System.Drawing.Size(180, 180);
@@ -184,7 +179,6 @@ namespace Yahtzee
             this.Controls.Add(this.rollButton);
             this.Controls.Add(this.diceBox2);
             this.Controls.Add(this.diceBox3);
-            this.Controls.Add(this.diceBox6);
             this.Controls.Add(this.diceBox5);
             this.Controls.Add(this.diceBox4);
             this.Controls.Add(this.diceBox1);
@@ -198,7 +192,6 @@ namespace Yahtzee
             ((System.ComponentModel.ISupportInitialize)(this.diceBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diceBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox2)).EndInit();
             this.ResumeLayout(false);
@@ -210,7 +203,6 @@ namespace Yahtzee
         private System.Windows.Forms.PictureBox diceBox1;
         private System.Windows.Forms.PictureBox diceBox4;
         private System.Windows.Forms.PictureBox diceBox5;
-        private System.Windows.Forms.PictureBox diceBox6;
         private System.Windows.Forms.PictureBox diceBox3;
         private System.Windows.Forms.PictureBox diceBox2;
         private System.Windows.Forms.Button rollButton;

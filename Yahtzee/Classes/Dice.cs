@@ -11,8 +11,6 @@ namespace Yahtzee
         public int value;
         public bool frozen = false;
 
-        Random randGen = new Random();
-
         public Dice(int _value)
         {
             value = _value;
@@ -22,7 +20,7 @@ namespace Yahtzee
         {
             if (frozen == false)
             {
-                value = randGen.Next(1, 7);
+                value = GameScreen.randGen.Next(1, 7);
             }
             else
             {
