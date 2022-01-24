@@ -91,12 +91,17 @@ namespace Yahtzee
 
         }
 
+        private void GameScreen_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void rollButton_Click(object sender, EventArgs e)
         {
             foreach (Dice dice in diceList)
             {
                 //randomize dice values (roll the dice)
-                dice.value = randGen.Next(1, 7);
+                dice.Roll();
             }
         }
 
