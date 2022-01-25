@@ -35,7 +35,7 @@ namespace Yahtzee
         private void OnStart()
         {
             //create dice objects to hold values and add to dice list
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Dice dice = new Dice(randGen.Next(1, 7));
                 diceList.Add(dice);
