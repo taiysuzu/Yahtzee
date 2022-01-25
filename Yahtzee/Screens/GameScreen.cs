@@ -20,8 +20,9 @@ namespace Yahtzee
         bool rollsDone = false;
         bool freezeMode = false;
 
-        //roll counter
-        int rolls = 0;
+        //turn and roll counters
+        int turn = 1;
+        int rolls = 3;
 
         //lists
         List<Dice> diceList = new List<Dice>();
@@ -139,6 +140,8 @@ namespace Yahtzee
                 //paints dice images based on dice values
                 diceBoxList[i].BackgroundImage = diceImageList[diceList[i].value - 1];
             }
+
+            turnLabel.Text = $"Turn: {turn}/13 \nRolls: {rolls}/3";
         }
 
         #region Button Click Methods
@@ -148,12 +151,13 @@ namespace Yahtzee
             {
                 //randomize dice values (roll the dice)
                 dice.Roll();
-                rolls++;
-                if (rolls == 3)
-                {
-                    rollsDone = true;
-                    rolls = 0;
-                }
+            }
+
+            rolls--;
+            if (rolls == 0)
+            {
+                rollsDone = true;
+                rolls = 3;
             }
             Refresh();
         }

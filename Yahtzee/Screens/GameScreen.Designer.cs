@@ -504,7 +504,7 @@ namespace Yahtzee
             this.turnLabel.Name = "turnLabel";
             this.turnLabel.Size = new System.Drawing.Size(107, 76);
             this.turnLabel.TabIndex = 37;
-            this.turnLabel.Text = "sample                       text";
+            this.turnLabel.Text = "sample text";
             // 
             // categoryHighlight1
             // 
