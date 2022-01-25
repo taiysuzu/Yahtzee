@@ -162,6 +162,11 @@ namespace Yahtzee
             Refresh();
         }
 
+        private void freezeButton_Click(object sender, EventArgs e)
+        {
+            freezeMode = !freezeMode;
+        }
+
         private void nameInputButton_Click(object sender, EventArgs e)
         {
             if (nameInput.Text.Length == 3)
@@ -185,11 +190,6 @@ namespace Yahtzee
             {
                 nameEntryLabel.Text += $"\n\n\n\n\n\n\n\n\nPlease enter 3 uppercase characters.";
             }
-        }
-
-        private void freezeButton_Click(object sender, EventArgs e)
-        {
-            freezeMode = !freezeMode;
         }
 
         private void test_Endgame_Click(object sender, EventArgs e)
