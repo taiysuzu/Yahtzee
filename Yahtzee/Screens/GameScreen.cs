@@ -126,7 +126,11 @@ namespace Yahtzee
                 lgStraightLabel.Enabled = true;
                 yahtzeeLabel.Enabled = true;
                 chanceLabel.Enabled = true;
+
                 rollButton.Enabled = false;
+
+                categoryHighlight1.Visible = true;
+                categoryHighlight2.Visible = true;
             }
             else if (rollsDone == false)
             {
