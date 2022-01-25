@@ -13,9 +13,16 @@ namespace Yahtzee
     public partial class GameScreen : UserControl
     {
         #region Global Values
+        //random generator
         public static Random randGen = new Random();
 
-        //lists - dice
+        //booleans
+        bool rollsDone = false;
+
+        //roll counter
+        int rolls = 0;
+
+        //lists
         List<Dice> diceList = new List<Dice>();
         List<PictureBox> diceBoxList = new List<PictureBox>();
         List<Image> diceImageList = new List<Image> { Properties.Resources.Die1, Properties.Resources.Die2, Properties.Resources.Die3,
@@ -98,7 +105,38 @@ namespace Yahtzee
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
-
+            if (rollsDone == true)
+            {
+                acesLabel.Enabled = true;
+                twosLabel.Enabled = true;
+                threesLabel.Enabled = true;
+                foursLabel.Enabled = true;
+                fivesLabel.Enabled = true;
+                sixesLabel.Enabled = true;
+                threeOfAKindLabel.Enabled = true;
+                fourOfAkindLabel.Enabled = true;
+                fullhouseLabel.Enabled = true;
+                smStraightLabel.Enabled = true;
+                lgStraightLabel.Enabled = true;
+                yahtzeeLabel.Enabled = true;
+                chanceLabel.Enabled = true;
+            }
+            else if (rollsDone == false)
+            {
+                acesLabel.Enabled = false;
+                twosLabel.Enabled = false;
+                threesLabel.Enabled = false;
+                foursLabel.Enabled = false;
+                fivesLabel.Enabled = false;
+                sixesLabel.Enabled = false;
+                threeOfAKindLabel.Enabled = false;
+                fourOfAkindLabel.Enabled = false;
+                fullhouseLabel.Enabled = false;
+                smStraightLabel.Enabled = false;
+                lgStraightLabel.Enabled = false;
+                yahtzeeLabel.Enabled = false;
+                chanceLabel.Enabled = false;
+            }
         }
 
         private void GameScreen_Paint(object sender, PaintEventArgs e)
@@ -116,6 +154,12 @@ namespace Yahtzee
             {
                 //randomize dice values (roll the dice)
                 dice.Roll();
+                rolls++;
+                if (rolls == 3)
+                {
+                    rollsDone = true;
+                    rolls = 0;
+                }
             }
             Refresh();
         }
