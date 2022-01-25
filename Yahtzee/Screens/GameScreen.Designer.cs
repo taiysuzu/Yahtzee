@@ -62,6 +62,11 @@ namespace Yahtzee
             this.twosLabel = new System.Windows.Forms.Label();
             this.acesLabel = new System.Windows.Forms.Label();
             this.backgroundLabel = new System.Windows.Forms.Label();
+            this.dice1FrozenBox = new System.Windows.Forms.Label();
+            this.dice3FrozenBox = new System.Windows.Forms.Label();
+            this.dice4FrozenBox = new System.Windows.Forms.Label();
+            this.dice5FrozenBox = new System.Windows.Forms.Label();
+            this.dice2FrozenBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox5)).BeginInit();
@@ -77,6 +82,7 @@ namespace Yahtzee
             this.diceBox1.Size = new System.Drawing.Size(180, 180);
             this.diceBox1.TabIndex = 1;
             this.diceBox1.TabStop = false;
+            this.diceBox1.Click += new System.EventHandler(this.diceBox1_Click);
             // 
             // diceBox4
             // 
@@ -86,6 +92,7 @@ namespace Yahtzee
             this.diceBox4.Size = new System.Drawing.Size(180, 180);
             this.diceBox4.TabIndex = 2;
             this.diceBox4.TabStop = false;
+            this.diceBox4.Click += new System.EventHandler(this.diceBox3_Click);
             // 
             // diceBox5
             // 
@@ -104,6 +111,7 @@ namespace Yahtzee
             this.diceBox3.Size = new System.Drawing.Size(180, 180);
             this.diceBox3.TabIndex = 5;
             this.diceBox3.TabStop = false;
+            this.diceBox3.Click += new System.EventHandler(this.diceBox2_Click);
             // 
             // diceBox2
             // 
@@ -188,6 +196,7 @@ namespace Yahtzee
             this.freezeButton.TabIndex = 12;
             this.freezeButton.Text = "Freeze Dice";
             this.freezeButton.UseVisualStyleBackColor = false;
+            this.freezeButton.Click += new System.EventHandler(this.freezeButton_Click);
             // 
             // totalTopScoreLabel
             // 
@@ -425,6 +434,48 @@ namespace Yahtzee
             this.backgroundLabel.Size = new System.Drawing.Size(843, 600);
             this.backgroundLabel.TabIndex = 31;
             // 
+            // dice1FrozenBox
+            // 
+            this.dice1FrozenBox.BackColor = System.Drawing.Color.Gold;
+            this.dice1FrozenBox.Location = new System.Drawing.Point(543, 93);
+            this.dice1FrozenBox.Name = "dice1FrozenBox";
+            this.dice1FrozenBox.Size = new System.Drawing.Size(194, 194);
+            this.dice1FrozenBox.TabIndex = 32;
+            // 
+            // dice3FrozenBox
+            // 
+            this.dice3FrozenBox.BackColor = System.Drawing.Color.Gold;
+            this.dice3FrozenBox.Location = new System.Drawing.Point(413, 297);
+            this.dice3FrozenBox.Name = "dice3FrozenBox";
+            this.dice3FrozenBox.Size = new System.Drawing.Size(194, 194);
+            this.dice3FrozenBox.TabIndex = 33;
+            // 
+            // dice4FrozenBox
+            // 
+            this.dice4FrozenBox.BackColor = System.Drawing.Color.Gold;
+            this.dice4FrozenBox.Location = new System.Drawing.Point(679, 297);
+            this.dice4FrozenBox.Name = "dice4FrozenBox";
+            this.dice4FrozenBox.Size = new System.Drawing.Size(194, 194);
+            this.dice4FrozenBox.TabIndex = 34;
+            this.dice4FrozenBox.Click += new System.EventHandler(this.diceBox4_Click);
+            // 
+            // dice5FrozenBox
+            // 
+            this.dice5FrozenBox.BackColor = System.Drawing.Color.Gold;
+            this.dice5FrozenBox.Location = new System.Drawing.Point(945, 297);
+            this.dice5FrozenBox.Name = "dice5FrozenBox";
+            this.dice5FrozenBox.Size = new System.Drawing.Size(194, 194);
+            this.dice5FrozenBox.TabIndex = 35;
+            this.dice5FrozenBox.Click += new System.EventHandler(this.diceBox5_Click);
+            // 
+            // dice2FrozenBox
+            // 
+            this.dice2FrozenBox.BackColor = System.Drawing.Color.Gold;
+            this.dice2FrozenBox.Location = new System.Drawing.Point(814, 93);
+            this.dice2FrozenBox.Name = "dice2FrozenBox";
+            this.dice2FrozenBox.Size = new System.Drawing.Size(194, 194);
+            this.dice2FrozenBox.TabIndex = 36;
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,6 +512,11 @@ namespace Yahtzee
             this.Controls.Add(this.nameInput);
             this.Controls.Add(this.nameInputButton);
             this.Controls.Add(this.nameEntryLabel);
+            this.Controls.Add(this.dice1FrozenBox);
+            this.Controls.Add(this.dice2FrozenBox);
+            this.Controls.Add(this.dice5FrozenBox);
+            this.Controls.Add(this.dice4FrozenBox);
+            this.Controls.Add(this.dice3FrozenBox);
             this.Controls.Add(this.backgroundLabel);
             this.DoubleBuffered = true;
             this.Name = "GameScreen";
@@ -510,5 +566,10 @@ namespace Yahtzee
         private System.Windows.Forms.Label twosLabel;
         private System.Windows.Forms.Label acesLabel;
         private System.Windows.Forms.Label backgroundLabel;
+        private System.Windows.Forms.Label dice1FrozenBox;
+        private System.Windows.Forms.Label dice3FrozenBox;
+        private System.Windows.Forms.Label dice4FrozenBox;
+        private System.Windows.Forms.Label dice5FrozenBox;
+        private System.Windows.Forms.Label dice2FrozenBox;
     }
 }

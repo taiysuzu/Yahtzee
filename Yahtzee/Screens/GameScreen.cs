@@ -18,6 +18,7 @@ namespace Yahtzee
 
         //booleans
         bool rollsDone = false;
+        bool freezeMode = false;
 
         //roll counter
         int rolls = 0;
@@ -165,9 +166,83 @@ namespace Yahtzee
             }
         }
 
+        private void freezeButton_Click(object sender, EventArgs e)
+        {
+            freezeMode = !freezeMode;
+        }
+
         private void test_Endgame_Click(object sender, EventArgs e)
         {
             OnEnd();
+        }
+        #endregion
+
+        #region Dice Box Click Methods
+        private void diceBox1_Click(object sender, EventArgs e)
+        {
+            if (freezeMode == true && diceList[1].frozen == false)
+            {
+                diceList[0].frozen = true;
+                dice1FrozenBox.BackColor = Color.SkyBlue;
+            }
+            else if (freezeMode == true && diceList[1].frozen == true)
+            {
+                diceList[0].frozen = false;
+                dice1FrozenBox.BackColor = Color.Gold;
+            }
+        }
+        private void diceBox2_Click(object sender, EventArgs e)
+        {
+            if (freezeMode == true && diceList[2].frozen == false)
+            {
+                diceList[1].frozen = true;
+                dice2FrozenBox.BackColor = Color.SkyBlue;
+            }
+            else if (freezeMode == true && diceList[2].frozen == true)
+            {
+                diceList[1].frozen = false;
+                dice2FrozenBox.BackColor = Color.Gold;
+            }
+        }
+        private void diceBox3_Click(object sender, EventArgs e)
+        {
+            if (freezeMode == true && diceList[3].frozen == false)
+            {
+                diceList[2].frozen = true;
+                dice3FrozenBox.BackColor = Color.SkyBlue;
+            }
+            else if (freezeMode == true && diceList[3].frozen == true)
+            {
+                diceList[2].frozen = false;
+                dice3FrozenBox.BackColor = Color.Gold;
+            }
+        }
+        private void diceBox4_Click(object sender, EventArgs e)
+        {
+            if (freezeMode == true && diceList[4].frozen == false)
+            {
+                diceList[3].frozen = true;
+                dice4FrozenBox.BackColor = Color.SkyBlue;
+            }
+            else if (freezeMode == true && diceList[4].frozen == true)
+            {
+                diceList[3].frozen = false;
+                dice4FrozenBox.BackColor = Color.Gold;
+            }
+        }
+
+        private void diceBox5_Click(object sender, EventArgs e)
+        {
+            if (freezeMode == true && diceList[5].frozen == false)
+            {
+                diceList[4].frozen = true;
+                dice5FrozenBox.BackColor = Color.SkyBlue;
+            }
+            else if (freezeMode == true && diceList[5].frozen == true)
+            {
+                diceList[4].frozen = false;
+                dice5FrozenBox.BackColor = Color.Gold;
+            }
         }
         #endregion
 
