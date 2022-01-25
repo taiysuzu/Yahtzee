@@ -179,7 +179,7 @@ namespace Yahtzee
             // 
             // freezeButton
             // 
-            this.freezeButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.freezeButton.BackColor = System.Drawing.Color.SkyBlue;
             this.freezeButton.FlatAppearance.BorderSize = 0;
             this.freezeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.freezeButton.Location = new System.Drawing.Point(686, 552);

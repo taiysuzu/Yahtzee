@@ -78,31 +78,6 @@ namespace Yahtzee
             nameEntryLabel.Text = $"\n\n\n\n\n\n\nYou achieved a score of {score}! \n\nEnter your initials below.";
         }
 
-        private void nameInputButton_Click(object sender, EventArgs e)
-        {
-            if (nameInput.Text.Length == 3)
-            {
-                //saves name and score to highscore object
-                name = nameInput.Text.ToUpper();
-
-                Highscore hs = new Highscore(name, score);
-                Yahtzee.scores.Add(hs);
-
-                // Goes to the game over screen
-                Form form = this.FindForm();
-
-                GameOver go = new GameOver();
-                go.Location = new Point((form.Width - go.Width) / 2, (form.Height - go.Height) / 2);
-
-                form.Controls.Add(go);
-                form.Controls.Remove(this);
-            }
-            else
-            {
-                nameEntryLabel.Text += $"\n\n\n\n\n\n\n\n\nPlease enter 3 uppercase characters.";
-            }
-        }
-
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             if (rollsDone == true)
@@ -148,6 +123,7 @@ namespace Yahtzee
             }
         }
 
+        #region Button Click Methods
         private void rollButton_Click(object sender, EventArgs e)
         {
             foreach (Dice dice in diceList)
@@ -164,10 +140,36 @@ namespace Yahtzee
             Refresh();
         }
 
+        private void nameInputButton_Click(object sender, EventArgs e)
+        {
+            if (nameInput.Text.Length == 3)
+            {
+                //saves name and score to highscore object
+                name = nameInput.Text.ToUpper();
+
+                Highscore hs = new Highscore(name, score);
+                Yahtzee.scores.Add(hs);
+
+                // Goes to the game over screen
+                Form form = this.FindForm();
+
+                GameOver go = new GameOver();
+                go.Location = new Point((form.Width - go.Width) / 2, (form.Height - go.Height) / 2);
+
+                form.Controls.Add(go);
+                form.Controls.Remove(this);
+            }
+            else
+            {
+                nameEntryLabel.Text += $"\n\n\n\n\n\n\n\n\nPlease enter 3 uppercase characters.";
+            }
+        }
+
         private void test_Endgame_Click(object sender, EventArgs e)
         {
             OnEnd();
         }
+        #endregion
 
         private void GameScreen_Load(object sender, EventArgs e)
         {
