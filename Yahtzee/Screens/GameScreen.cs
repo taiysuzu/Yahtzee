@@ -20,8 +20,9 @@ namespace Yahtzee
         bool rollsDone = false;
         bool freezeMode = false;
 
-        //roll counter
-        int rolls = 0;
+        //turn and roll counters
+        int turn = 1;
+        int rolls = 3;
 
         //lists
         List<Dice> diceList = new List<Dice>();
@@ -143,6 +144,8 @@ namespace Yahtzee
                 //paints dice images based on dice values
                 diceBoxList[i].BackgroundImage = diceImageList[diceList[i].value - 1];
             }
+
+            turnLabel.Text = $"Turn: {turn}/13 \nRolls: {rolls}/3";
         }
         
         #region Button Click Methods
@@ -152,14 +155,20 @@ namespace Yahtzee
             {
                 //randomize dice values (roll the dice)
                 dice.Roll();
-                rolls++;
-                if (rolls == 3)
-                {
-                    rollsDone = true;
-                    rolls = 0;
-                }
+            }
+
+            rolls--;
+            if (rolls == 0)
+            {
+                rollsDone = true;
+                rolls = 3;
             }
             Refresh();
+        }
+
+        private void freezeButton_Click(object sender, EventArgs e)
+        {
+            freezeMode = !freezeMode;
         }
 
         private void nameInputButton_Click(object sender, EventArgs e)
@@ -185,11 +194,6 @@ namespace Yahtzee
             {
                 nameEntryLabel.Text += $"\n\n\n\n\n\n\n\n\nPlease enter 3 uppercase characters.";
             }
-        }
-
-        private void freezeButton_Click(object sender, EventArgs e)
-        {
-            freezeMode = !freezeMode;
         }
 
         private void test_Endgame_Click(object sender, EventArgs e)
@@ -320,16 +324,19 @@ namespace Yahtzee
         {
             rollsDone = false;
             freezeMode = false;
+
             foreach (Dice Dice in diceList)
             {
                 Dice.frozen = false;
             }
+
             dice1FrozenBox.BackColor = Color.Gold;
             dice2FrozenBox.BackColor = Color.Gold;
             dice3FrozenBox.BackColor = Color.Gold;
             dice4FrozenBox.BackColor = Color.Gold;
             dice5FrozenBox.BackColor = Color.Gold;
-
+            categoryHighlight1.BackColor = Color.Gold;
+            categoryHighlight2 .BackColor = Color.Gold;
         }
     }
 }
