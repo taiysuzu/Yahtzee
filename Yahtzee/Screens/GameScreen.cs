@@ -324,16 +324,19 @@ namespace Yahtzee
         {
             rollsDone = false;
             freezeMode = false;
+
             foreach (Dice Dice in diceList)
             {
                 Dice.frozen = false;
             }
+
             dice1FrozenBox.BackColor = Color.Gold;
             dice2FrozenBox.BackColor = Color.Gold;
             dice3FrozenBox.BackColor = Color.Gold;
             dice4FrozenBox.BackColor = Color.Gold;
             dice5FrozenBox.BackColor = Color.Gold;
-
+            categoryHighlight1.BackColor = Color.Gold;
+            categoryHighlight2 .BackColor = Color.Gold;
         }
     }
 }
