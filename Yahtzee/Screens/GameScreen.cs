@@ -326,6 +326,34 @@ namespace Yahtzee
             sixesLabel.Text = (sixes.Count * 6).ToString();
             NewTurn();
         }
+        private void threeOfAKindLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void fourOfAkindLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void fullhouseLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void smStraightLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void lgStraightLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void yahtzeeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void chanceLabel_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         private void NewTurn()
@@ -347,6 +375,8 @@ namespace Yahtzee
             dice5FrozenBox.BackColor = Color.Gold;
             categoryHighlight1.BackColor = Color.Gold;
             categoryHighlight2 .BackColor = Color.Gold;
+            Refresh();
         }
+
     }
 }

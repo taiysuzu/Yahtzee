@@ -231,6 +231,7 @@ namespace Yahtzee
             this.threeOfAKindLabel.Size = new System.Drawing.Size(60, 28);
             this.threeOfAKindLabel.TabIndex = 14;
             this.threeOfAKindLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.threeOfAKindLabel.Click += new System.EventHandler(this.threeOfAKindLabel_Click);
             // 
             // fourOfAkindLabel
             // 
@@ -243,6 +244,7 @@ namespace Yahtzee
             this.fourOfAkindLabel.Size = new System.Drawing.Size(60, 28);
             this.fourOfAkindLabel.TabIndex = 15;
             this.fourOfAkindLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.fourOfAkindLabel.Click += new System.EventHandler(this.fourOfAkindLabel_Click);
             // 
             // smStraightLabel
             // 
@@ -255,6 +257,7 @@ namespace Yahtzee
             this.smStraightLabel.Size = new System.Drawing.Size(60, 28);
             this.smStraightLabel.TabIndex = 16;
             this.smStraightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.smStraightLabel.Click += new System.EventHandler(this.smStraightLabel_Click);
             // 
             // fullhouseLabel
             // 
@@ -267,6 +270,7 @@ namespace Yahtzee
             this.fullhouseLabel.Size = new System.Drawing.Size(60, 28);
             this.fullhouseLabel.TabIndex = 16;
             this.fullhouseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.fullhouseLabel.Click += new System.EventHandler(this.fullhouseLabel_Click);
             // 
             // lgStraightLabel
             // 
@@ -279,6 +283,7 @@ namespace Yahtzee
             this.lgStraightLabel.Size = new System.Drawing.Size(60, 28);
             this.lgStraightLabel.TabIndex = 17;
             this.lgStraightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lgStraightLabel.Click += new System.EventHandler(this.lgStraightLabel_Click);
             // 
             // yahtzeeLabel
             // 
@@ -291,6 +296,7 @@ namespace Yahtzee
             this.yahtzeeLabel.Size = new System.Drawing.Size(60, 28);
             this.yahtzeeLabel.TabIndex = 18;
             this.yahtzeeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.yahtzeeLabel.Click += new System.EventHandler(this.yahtzeeLabel_Click);
             // 
             // chanceLabel
             // 
@@ -303,6 +309,7 @@ namespace Yahtzee
             this.chanceLabel.Size = new System.Drawing.Size(60, 28);
             this.chanceLabel.TabIndex = 19;
             this.chanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chanceLabel.Click += new System.EventHandler(this.chanceLabel_Click);
             // 
             // totalBottomScoreLabel
             // 
@@ -310,9 +317,9 @@ namespace Yahtzee
             this.totalBottomScoreLabel.Enabled = false;
             this.totalBottomScoreLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalBottomScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalBottomScoreLabel.Location = new System.Drawing.Point(297, 505);
+            this.totalBottomScoreLabel.Location = new System.Drawing.Point(297, 497);
             this.totalBottomScoreLabel.Name = "totalBottomScoreLabel";
-            this.totalBottomScoreLabel.Size = new System.Drawing.Size(60, 28);
+            this.totalBottomScoreLabel.Size = new System.Drawing.Size(60, 36);
             this.totalBottomScoreLabel.TabIndex = 20;
             this.totalBottomScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -322,9 +329,9 @@ namespace Yahtzee
             this.totalTopScoreLabel2.Enabled = false;
             this.totalTopScoreLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalTopScoreLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalTopScoreLabel2.Location = new System.Drawing.Point(297, 537);
+            this.totalTopScoreLabel2.Location = new System.Drawing.Point(297, 533);
             this.totalTopScoreLabel2.Name = "totalTopScoreLabel2";
-            this.totalTopScoreLabel2.Size = new System.Drawing.Size(60, 28);
+            this.totalTopScoreLabel2.Size = new System.Drawing.Size(60, 32);
             this.totalTopScoreLabel2.TabIndex = 21;
             this.totalTopScoreLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -334,9 +341,9 @@ namespace Yahtzee
             this.grandTotalLabel.Enabled = false;
             this.grandTotalLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grandTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grandTotalLabel.Location = new System.Drawing.Point(297, 569);
+            this.grandTotalLabel.Location = new System.Drawing.Point(297, 565);
             this.grandTotalLabel.Name = "grandTotalLabel";
-            this.grandTotalLabel.Size = new System.Drawing.Size(60, 28);
+            this.grandTotalLabel.Size = new System.Drawing.Size(60, 32);
             this.grandTotalLabel.TabIndex = 22;
             this.grandTotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -499,12 +506,15 @@ namespace Yahtzee
             // 
             // turnLabel
             // 
+            this.turnLabel.BackColor = System.Drawing.Color.Crimson;
             this.turnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.turnLabel.ForeColor = System.Drawing.Color.White;
             this.turnLabel.Location = new System.Drawing.Point(370, 4);
             this.turnLabel.Name = "turnLabel";
             this.turnLabel.Size = new System.Drawing.Size(107, 76);
             this.turnLabel.TabIndex = 37;
-            this.turnLabel.Text = "sample text";
+            this.turnLabel.Text = "Turn: 1\r\n\r\nRolls: 3/3";
+            this.turnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // categoryHighlight1
             // 
@@ -526,12 +536,15 @@ namespace Yahtzee
             // 
             // topLabel
             // 
-            this.topLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topLabel.BackColor = System.Drawing.Color.Crimson;
+            this.topLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topLabel.ForeColor = System.Drawing.Color.White;
             this.topLabel.Location = new System.Drawing.Point(483, 4);
             this.topLabel.Name = "topLabel";
-            this.topLabel.Size = new System.Drawing.Size(714, 76);
+            this.topLabel.Size = new System.Drawing.Size(605, 76);
             this.topLabel.TabIndex = 40;
-            this.topLabel.Text = "toplabel";
+            this.topLabel.Text = "Roll The Dice!";
+            this.topLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GameScreen
             // 
