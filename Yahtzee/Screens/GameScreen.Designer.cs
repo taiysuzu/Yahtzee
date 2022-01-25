@@ -67,6 +67,10 @@ namespace Yahtzee
             this.dice4FrozenBox = new System.Windows.Forms.Label();
             this.dice5FrozenBox = new System.Windows.Forms.Label();
             this.dice2FrozenBox = new System.Windows.Forms.Label();
+            this.turnLabel = new System.Windows.Forms.Label();
+            this.categoryHighlight1 = new System.Windows.Forms.Label();
+            this.categoryHighlight2 = new System.Windows.Forms.Label();
+            this.topLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox5)).BeginInit();
@@ -128,6 +132,7 @@ namespace Yahtzee
             // 
             this.rollButton.FlatAppearance.BorderSize = 0;
             this.rollButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rollButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rollButton.Location = new System.Drawing.Point(686, 515);
             this.rollButton.Name = "rollButton";
             this.rollButton.Size = new System.Drawing.Size(180, 23);
@@ -165,6 +170,7 @@ namespace Yahtzee
             // 
             // test_Endgame
             // 
+            this.test_Endgame.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.test_Endgame.Location = new System.Drawing.Point(1047, 500);
             this.test_Endgame.Name = "test_Endgame";
             this.test_Endgame.Size = new System.Drawing.Size(150, 97);
@@ -178,6 +184,7 @@ namespace Yahtzee
             this.nameInputButton.Enabled = false;
             this.nameInputButton.FlatAppearance.BorderSize = 0;
             this.nameInputButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nameInputButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameInputButton.Location = new System.Drawing.Point(900, 574);
             this.nameInputButton.Name = "nameInputButton";
             this.nameInputButton.Size = new System.Drawing.Size(100, 23);
@@ -192,6 +199,7 @@ namespace Yahtzee
             this.freezeButton.BackColor = System.Drawing.Color.SkyBlue;
             this.freezeButton.FlatAppearance.BorderSize = 0;
             this.freezeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.freezeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.freezeButton.Location = new System.Drawing.Point(686, 552);
             this.freezeButton.Name = "freezeButton";
             this.freezeButton.Size = new System.Drawing.Size(180, 23);
@@ -302,7 +310,7 @@ namespace Yahtzee
             this.totalBottomScoreLabel.Enabled = false;
             this.totalBottomScoreLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalBottomScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalBottomScoreLabel.Location = new System.Drawing.Point(297, 500);
+            this.totalBottomScoreLabel.Location = new System.Drawing.Point(297, 505);
             this.totalBottomScoreLabel.Name = "totalBottomScoreLabel";
             this.totalBottomScoreLabel.Size = new System.Drawing.Size(60, 28);
             this.totalBottomScoreLabel.TabIndex = 20;
@@ -314,7 +322,7 @@ namespace Yahtzee
             this.totalTopScoreLabel2.Enabled = false;
             this.totalTopScoreLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalTopScoreLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalTopScoreLabel2.Location = new System.Drawing.Point(297, 533);
+            this.totalTopScoreLabel2.Location = new System.Drawing.Point(297, 537);
             this.totalTopScoreLabel2.Name = "totalTopScoreLabel2";
             this.totalTopScoreLabel2.Size = new System.Drawing.Size(60, 28);
             this.totalTopScoreLabel2.TabIndex = 21;
@@ -489,12 +497,50 @@ namespace Yahtzee
             this.dice2FrozenBox.TabIndex = 36;
             this.dice2FrozenBox.Visible = false;
             // 
+            // turnLabel
+            // 
+            this.turnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.turnLabel.Location = new System.Drawing.Point(370, 4);
+            this.turnLabel.Name = "turnLabel";
+            this.turnLabel.Size = new System.Drawing.Size(107, 76);
+            this.turnLabel.TabIndex = 37;
+            this.turnLabel.Text = "sample                       text";
+            // 
+            // categoryHighlight1
+            // 
+            this.categoryHighlight1.BackColor = System.Drawing.Color.Gold;
+            this.categoryHighlight1.Location = new System.Drawing.Point(290, 17);
+            this.categoryHighlight1.Name = "categoryHighlight1";
+            this.categoryHighlight1.Size = new System.Drawing.Size(74, 266);
+            this.categoryHighlight1.TabIndex = 38;
+            this.categoryHighlight1.Visible = false;
+            // 
+            // categoryHighlight2
+            // 
+            this.categoryHighlight2.BackColor = System.Drawing.Color.Gold;
+            this.categoryHighlight2.Location = new System.Drawing.Point(290, 295);
+            this.categoryHighlight2.Name = "categoryHighlight2";
+            this.categoryHighlight2.Size = new System.Drawing.Size(74, 305);
+            this.categoryHighlight2.TabIndex = 39;
+            this.categoryHighlight2.Visible = false;
+            // 
+            // topLabel
+            // 
+            this.topLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topLabel.Location = new System.Drawing.Point(483, 4);
+            this.topLabel.Name = "topLabel";
+            this.topLabel.Size = new System.Drawing.Size(714, 76);
+            this.topLabel.TabIndex = 40;
+            this.topLabel.Text = "toplabel";
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Yahtzee.Properties.Resources.GameScreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Controls.Add(this.topLabel);
+            this.Controls.Add(this.turnLabel);
             this.Controls.Add(this.acesLabel);
             this.Controls.Add(this.twosLabel);
             this.Controls.Add(this.threesLabel);
@@ -530,6 +576,8 @@ namespace Yahtzee
             this.Controls.Add(this.dice2FrozenBox);
             this.Controls.Add(this.diceBox3);
             this.Controls.Add(this.dice3FrozenBox);
+            this.Controls.Add(this.categoryHighlight1);
+            this.Controls.Add(this.categoryHighlight2);
             this.Controls.Add(this.backgroundLabel);
             this.DoubleBuffered = true;
             this.Name = "GameScreen";
@@ -584,5 +632,9 @@ namespace Yahtzee
         private System.Windows.Forms.Label dice4FrozenBox;
         private System.Windows.Forms.Label dice5FrozenBox;
         private System.Windows.Forms.Label dice2FrozenBox;
+        private System.Windows.Forms.Label turnLabel;
+        private System.Windows.Forms.Label categoryHighlight1;
+        private System.Windows.Forms.Label categoryHighlight2;
+        private System.Windows.Forms.Label topLabel;
     }
 }
