@@ -87,12 +87,12 @@ namespace Yahtzee
             // diceBox4
             // 
             this.diceBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.diceBox4.Location = new System.Drawing.Point(420, 304);
+            this.diceBox4.Location = new System.Drawing.Point(686, 304);
             this.diceBox4.Name = "diceBox4";
             this.diceBox4.Size = new System.Drawing.Size(180, 180);
             this.diceBox4.TabIndex = 2;
             this.diceBox4.TabStop = false;
-            this.diceBox4.Click += new System.EventHandler(this.diceBox3_Click);
+            this.diceBox4.Click += new System.EventHandler(this.diceBox4_Click);
             // 
             // diceBox5
             // 
@@ -102,25 +102,27 @@ namespace Yahtzee
             this.diceBox5.Size = new System.Drawing.Size(180, 180);
             this.diceBox5.TabIndex = 3;
             this.diceBox5.TabStop = false;
+            this.diceBox5.Click += new System.EventHandler(this.diceBox5_Click);
             // 
             // diceBox3
             // 
             this.diceBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.diceBox3.Location = new System.Drawing.Point(822, 100);
+            this.diceBox3.Location = new System.Drawing.Point(420, 304);
             this.diceBox3.Name = "diceBox3";
             this.diceBox3.Size = new System.Drawing.Size(180, 180);
             this.diceBox3.TabIndex = 5;
             this.diceBox3.TabStop = false;
-            this.diceBox3.Click += new System.EventHandler(this.diceBox2_Click);
+            this.diceBox3.Click += new System.EventHandler(this.diceBox3_Click);
             // 
             // diceBox2
             // 
             this.diceBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.diceBox2.Location = new System.Drawing.Point(686, 304);
+            this.diceBox2.Location = new System.Drawing.Point(822, 100);
             this.diceBox2.Name = "diceBox2";
             this.diceBox2.Size = new System.Drawing.Size(180, 180);
             this.diceBox2.TabIndex = 6;
             this.diceBox2.TabStop = false;
+            this.diceBox2.Click += new System.EventHandler(this.diceBox2_Click);
             // 
             // rollButton
             // 
@@ -441,6 +443,7 @@ namespace Yahtzee
             this.dice1FrozenBox.Name = "dice1FrozenBox";
             this.dice1FrozenBox.Size = new System.Drawing.Size(194, 194);
             this.dice1FrozenBox.TabIndex = 32;
+            this.dice1FrozenBox.Visible = false;
             // 
             // dice3FrozenBox
             // 
@@ -449,6 +452,7 @@ namespace Yahtzee
             this.dice3FrozenBox.Name = "dice3FrozenBox";
             this.dice3FrozenBox.Size = new System.Drawing.Size(194, 194);
             this.dice3FrozenBox.TabIndex = 33;
+            this.dice3FrozenBox.Visible = false;
             // 
             // dice4FrozenBox
             // 
@@ -457,6 +461,7 @@ namespace Yahtzee
             this.dice4FrozenBox.Name = "dice4FrozenBox";
             this.dice4FrozenBox.Size = new System.Drawing.Size(194, 194);
             this.dice4FrozenBox.TabIndex = 34;
+            this.dice4FrozenBox.Visible = false;
             this.dice4FrozenBox.Click += new System.EventHandler(this.diceBox4_Click);
             // 
             // dice5FrozenBox
@@ -466,6 +471,7 @@ namespace Yahtzee
             this.dice5FrozenBox.Name = "dice5FrozenBox";
             this.dice5FrozenBox.Size = new System.Drawing.Size(194, 194);
             this.dice5FrozenBox.TabIndex = 35;
+            this.dice5FrozenBox.Visible = false;
             this.dice5FrozenBox.Click += new System.EventHandler(this.diceBox5_Click);
             // 
             // dice2FrozenBox
@@ -475,6 +481,7 @@ namespace Yahtzee
             this.dice2FrozenBox.Name = "dice2FrozenBox";
             this.dice2FrozenBox.Size = new System.Drawing.Size(194, 194);
             this.dice2FrozenBox.TabIndex = 36;
+            this.dice2FrozenBox.Visible = false;
             // 
             // GameScreen
             // 
@@ -504,8 +511,6 @@ namespace Yahtzee
             this.Controls.Add(this.freezeButton);
             this.Controls.Add(this.test_Endgame);
             this.Controls.Add(this.rollButton);
-            this.Controls.Add(this.diceBox2);
-            this.Controls.Add(this.diceBox3);
             this.Controls.Add(this.diceBox5);
             this.Controls.Add(this.diceBox4);
             this.Controls.Add(this.diceBox1);
@@ -513,9 +518,11 @@ namespace Yahtzee
             this.Controls.Add(this.nameInputButton);
             this.Controls.Add(this.nameEntryLabel);
             this.Controls.Add(this.dice1FrozenBox);
-            this.Controls.Add(this.dice2FrozenBox);
             this.Controls.Add(this.dice5FrozenBox);
             this.Controls.Add(this.dice4FrozenBox);
+            this.Controls.Add(this.diceBox2);
+            this.Controls.Add(this.dice2FrozenBox);
+            this.Controls.Add(this.diceBox3);
             this.Controls.Add(this.dice3FrozenBox);
             this.Controls.Add(this.backgroundLabel);
             this.DoubleBuffered = true;

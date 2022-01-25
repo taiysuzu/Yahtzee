@@ -81,6 +81,23 @@ namespace Yahtzee
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
+            if (freezeMode == true)
+            {
+                dice1FrozenBox.Visible = true;
+                dice2FrozenBox.Visible = true;
+                dice3FrozenBox.Visible = true;
+                dice4FrozenBox.Visible = true;
+                dice5FrozenBox.Visible = true;
+            }
+            else
+            {
+                dice1FrozenBox.Visible = false;
+                dice2FrozenBox.Visible = false;
+                dice3FrozenBox.Visible = false;
+                dice4FrozenBox.Visible = false;
+                dice5FrozenBox.Visible = false;
+            }
+
             if (rollsDone == true)
             {
                 acesLabel.Enabled = true;
@@ -180,12 +197,12 @@ namespace Yahtzee
         #region Dice Box Click Methods
         private void diceBox1_Click(object sender, EventArgs e)
         {
-            if (freezeMode == true && diceList[1].frozen == false)
+            if (freezeMode == true && diceList[0].frozen == false)
             {
                 diceList[0].frozen = true;
                 dice1FrozenBox.BackColor = Color.SkyBlue;
             }
-            else if (freezeMode == true && diceList[1].frozen == true)
+            else if (freezeMode == true && diceList[0].frozen == true)
             {
                 diceList[0].frozen = false;
                 dice1FrozenBox.BackColor = Color.Gold;
@@ -193,12 +210,12 @@ namespace Yahtzee
         }
         private void diceBox2_Click(object sender, EventArgs e)
         {
-            if (freezeMode == true && diceList[2].frozen == false)
+            if (freezeMode == true && diceList[1].frozen == false)
             {
                 diceList[1].frozen = true;
                 dice2FrozenBox.BackColor = Color.SkyBlue;
             }
-            else if (freezeMode == true && diceList[2].frozen == true)
+            else if (freezeMode == true && diceList[1].frozen == true)
             {
                 diceList[1].frozen = false;
                 dice2FrozenBox.BackColor = Color.Gold;
@@ -206,12 +223,12 @@ namespace Yahtzee
         }
         private void diceBox3_Click(object sender, EventArgs e)
         {
-            if (freezeMode == true && diceList[3].frozen == false)
+            if (freezeMode == true && diceList[2].frozen == false)
             {
                 diceList[2].frozen = true;
                 dice3FrozenBox.BackColor = Color.SkyBlue;
             }
-            else if (freezeMode == true && diceList[3].frozen == true)
+            else if (freezeMode == true && diceList[2].frozen == true)
             {
                 diceList[2].frozen = false;
                 dice3FrozenBox.BackColor = Color.Gold;
@@ -219,12 +236,12 @@ namespace Yahtzee
         }
         private void diceBox4_Click(object sender, EventArgs e)
         {
-            if (freezeMode == true && diceList[4].frozen == false)
+            if (freezeMode == true && diceList[3].frozen == false)
             {
                 diceList[3].frozen = true;
                 dice4FrozenBox.BackColor = Color.SkyBlue;
             }
-            else if (freezeMode == true && diceList[4].frozen == true)
+            else if (freezeMode == true && diceList[3].frozen == true)
             {
                 diceList[3].frozen = false;
                 dice4FrozenBox.BackColor = Color.Gold;
@@ -233,12 +250,12 @@ namespace Yahtzee
 
         private void diceBox5_Click(object sender, EventArgs e)
         {
-            if (freezeMode == true && diceList[5].frozen == false)
+            if (freezeMode == true && diceList[4].frozen == false)
             {
                 diceList[4].frozen = true;
                 dice5FrozenBox.BackColor = Color.SkyBlue;
             }
-            else if (freezeMode == true && diceList[5].frozen == true)
+            else if (freezeMode == true && diceList[4].frozen == true)
             {
                 diceList[4].frozen = false;
                 dice5FrozenBox.BackColor = Color.Gold;
