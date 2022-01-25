@@ -89,6 +89,7 @@ namespace Yahtzee
                 dice3FrozenBox.Visible = true;
                 dice4FrozenBox.Visible = true;
                 dice5FrozenBox.Visible = true;
+                rollButton.Enabled = false;
             }
             else
             {
@@ -97,6 +98,7 @@ namespace Yahtzee
                 dice3FrozenBox.Visible = false;
                 dice4FrozenBox.Visible = false;
                 dice5FrozenBox.Visible = false;
+                rollButton.Enabled = true;
             }
 
             if (rollsDone == true)
@@ -114,6 +116,7 @@ namespace Yahtzee
                 lgStraightLabel.Enabled = true;
                 yahtzeeLabel.Enabled = true;
                 chanceLabel.Enabled = true;
+                rollButton.Enabled = false;
             }
             else if (rollsDone == false)
             {
@@ -130,6 +133,7 @@ namespace Yahtzee
                 lgStraightLabel.Enabled = false;
                 yahtzeeLabel.Enabled = false;
                 chanceLabel.Enabled = false;
+                rollButton.Enabled = true;
             }
         }
 
@@ -143,7 +147,7 @@ namespace Yahtzee
 
             turnLabel.Text = $"Turn: {turn}/13 \nRolls: {rolls}/3";
         }
-
+        
         #region Button Click Methods
         private void rollButton_Click(object sender, EventArgs e)
         {
@@ -277,37 +281,59 @@ namespace Yahtzee
         {
             List<Dice> aces = diceList.FindAll(a => a.value == 1);
             acesLabel.Text = aces.Count.ToString();
+            NewTurn();
         }
 
         private void twosLabel_Click(object sender, EventArgs e)
         {
             List<Dice> twos = diceList.FindAll(a => a.value == 2);
             twosLabel.Text = (twos.Count * 2).ToString();
+            NewTurn();
         }
 
         private void threesLabel_Click(object sender, EventArgs e)
         {
             List<Dice> threes = diceList.FindAll(a => a.value == 3);
             threesLabel.Text = (threes.Count * 3).ToString();
+            NewTurn();
         }
 
         private void foursLabel_Click(object sender, EventArgs e)
         {
             List<Dice> fours = diceList.FindAll(a => a.value == 4);
             foursLabel.Text = (fours.Count * 4).ToString();
+            NewTurn();
         }
 
         private void fivesLabel_Click(object sender, EventArgs e)
         {
             List<Dice> fives = diceList.FindAll(a => a.value == 5);
             fivesLabel.Text = (fives.Count * 5).ToString();
+            NewTurn();
         }
 
         private void sixesLabel_Click(object sender, EventArgs e)
         {
             List<Dice> sixes = diceList.FindAll(a => a.value == 6);
             sixesLabel.Text = (sixes.Count * 6).ToString();
+            NewTurn();
         }
         #endregion
+
+        private void NewTurn()
+        {
+            rollsDone = false;
+            freezeMode = false;
+            foreach (Dice Dice in diceList)
+            {
+                Dice.frozen = false;
+            }
+            dice1FrozenBox.BackColor = Color.Gold;
+            dice2FrozenBox.BackColor = Color.Gold;
+            dice3FrozenBox.BackColor = Color.Gold;
+            dice4FrozenBox.BackColor = Color.Gold;
+            dice5FrozenBox.BackColor = Color.Gold;
+
+        }
     }
 }
