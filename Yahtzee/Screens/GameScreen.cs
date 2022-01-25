@@ -375,6 +375,7 @@ namespace Yahtzee
             dice5FrozenBox.BackColor = Color.Gold;
             categoryHighlight1.BackColor = Color.Gold;
             categoryHighlight2 .BackColor = Color.Gold;
+            Refresh();
         }
 
     }
