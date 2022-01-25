@@ -267,5 +267,43 @@ namespace Yahtzee
         {
 
         }
+
+        #region Label Click Methods
+        private void acesLabel_Click(object sender, EventArgs e)
+        {
+            List<Dice> aces = diceList.FindAll(a => a.value == 1);
+            acesLabel.Text = aces.Count.ToString();
+        }
+
+        private void twosLabel_Click(object sender, EventArgs e)
+        {
+            List<Dice> twos = diceList.FindAll(a => a.value == 2);
+            twosLabel.Text = (twos.Count * 2).ToString();
+        }
+
+        private void threesLabel_Click(object sender, EventArgs e)
+        {
+            List<Dice> threes = diceList.FindAll(a => a.value == 3);
+            threesLabel.Text = (threes.Count * 3).ToString();
+        }
+
+        private void foursLabel_Click(object sender, EventArgs e)
+        {
+            List<Dice> fours = diceList.FindAll(a => a.value == 4);
+            foursLabel.Text = (fours.Count * 4).ToString();
+        }
+
+        private void fivesLabel_Click(object sender, EventArgs e)
+        {
+            List<Dice> fives = diceList.FindAll(a => a.value == 5);
+            fivesLabel.Text = (fives.Count * 5).ToString();
+        }
+
+        private void sixesLabel_Click(object sender, EventArgs e)
+        {
+            List<Dice> sixes = diceList.FindAll(a => a.value == 6);
+            sixesLabel.Text = (sixes.Count * 6).ToString();
+        }
+        #endregion
     }
 }

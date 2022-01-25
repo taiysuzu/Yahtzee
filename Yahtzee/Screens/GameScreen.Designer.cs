@@ -367,6 +367,7 @@ namespace Yahtzee
             this.sixesLabel.Size = new System.Drawing.Size(60, 28);
             this.sixesLabel.TabIndex = 25;
             this.sixesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sixesLabel.Click += new System.EventHandler(this.sixesLabel_Click);
             // 
             // fivesLabel
             // 
@@ -379,6 +380,7 @@ namespace Yahtzee
             this.fivesLabel.Size = new System.Drawing.Size(60, 28);
             this.fivesLabel.TabIndex = 26;
             this.fivesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.fivesLabel.Click += new System.EventHandler(this.fivesLabel_Click);
             // 
             // foursLabel
             // 
@@ -391,6 +393,7 @@ namespace Yahtzee
             this.foursLabel.Size = new System.Drawing.Size(60, 28);
             this.foursLabel.TabIndex = 27;
             this.foursLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.foursLabel.Click += new System.EventHandler(this.foursLabel_Click);
             // 
             // threesLabel
             // 
@@ -403,6 +406,7 @@ namespace Yahtzee
             this.threesLabel.Size = new System.Drawing.Size(60, 28);
             this.threesLabel.TabIndex = 28;
             this.threesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.threesLabel.Click += new System.EventHandler(this.threesLabel_Click);
             // 
             // twosLabel
             // 
@@ -415,6 +419,7 @@ namespace Yahtzee
             this.twosLabel.Size = new System.Drawing.Size(60, 28);
             this.twosLabel.TabIndex = 29;
             this.twosLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.twosLabel.Click += new System.EventHandler(this.twosLabel_Click);
             // 
             // acesLabel
             // 
@@ -427,6 +432,7 @@ namespace Yahtzee
             this.acesLabel.Size = new System.Drawing.Size(60, 28);
             this.acesLabel.TabIndex = 30;
             this.acesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.acesLabel.Click += new System.EventHandler(this.acesLabel_Click);
             // 
             // backgroundLabel
             // 
