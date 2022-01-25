@@ -27,6 +27,7 @@ namespace Yahtzee
         //lists
         List<Dice> diceList = new List<Dice>();
         List<PictureBox> diceBoxList = new List<PictureBox>();
+        List<Label> diceFrozenBoxList = new List<Label>();
         List<Image> diceImageList = new List<Image> { Properties.Resources.Die1, Properties.Resources.Die2, Properties.Resources.Die3,
             Properties.Resources.Die4, Properties.Resources.Die5, Properties.Resources.Die6};
 
@@ -50,12 +51,18 @@ namespace Yahtzee
                 diceList.Add(dice);
             }
 
-            //add all dice picture boxes to list
+            //add all dice picture boxes and labels to lists
             diceBoxList.Add(diceBox1);
             diceBoxList.Add(diceBox2);
             diceBoxList.Add(diceBox3);
             diceBoxList.Add(diceBox4);
             diceBoxList.Add(diceBox5);
+
+            diceFrozenBoxList.Add(dice1FrozenBox);
+            diceFrozenBoxList.Add(dice2FrozenBox);
+            diceFrozenBoxList.Add(dice3FrozenBox);
+            diceFrozenBoxList.Add(dice4FrozenBox);
+            diceFrozenBoxList.Add(dice5FrozenBox);
 
             //reset game values
             score = 0;
@@ -93,11 +100,14 @@ namespace Yahtzee
             }
             else
             {
-                dice1FrozenBox.Visible = false;
-                dice2FrozenBox.Visible = false;
-                dice3FrozenBox.Visible = false;
-                dice4FrozenBox.Visible = false;
-                dice5FrozenBox.Visible = false;
+
+                for (int i = 0; i < 5; i++)
+                {
+                    if (diceList[i].frozen == false)
+                    {
+                        diceFrozenBoxList[i].Visible = false;
+                    }
+                }
                 rollButton.Enabled = true;
             }
 
@@ -116,7 +126,11 @@ namespace Yahtzee
                 lgStraightLabel.Enabled = true;
                 yahtzeeLabel.Enabled = true;
                 chanceLabel.Enabled = true;
+
                 rollButton.Enabled = false;
+
+                categoryHighlight1.Visible = true;
+                categoryHighlight2.Visible = true;
             }
             else if (rollsDone == false)
             {
@@ -161,7 +175,6 @@ namespace Yahtzee
             if (rolls == 0)
             {
                 rollsDone = true;
-                rolls = 3;
             }
             Refresh();
         }
@@ -271,11 +284,6 @@ namespace Yahtzee
         }
         #endregion
 
-        private void GameScreen_Load(object sender, EventArgs e)
-        {
-
-        }
-
         #region Label Click Methods
         private void acesLabel_Click(object sender, EventArgs e)
         {
@@ -350,6 +358,8 @@ namespace Yahtzee
 
         private void NewTurn()
         {
+            turn++;
+            rolls = 3;
             rollsDone = false;
             freezeMode = false;
 
