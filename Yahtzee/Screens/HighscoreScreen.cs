@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Taiyo + Charlie
+ * Yahtzee
+ * ICS4U
+ * Mr. T
+ * Jan 26, 2022
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,6 +43,7 @@ namespace Yahtzee
 
         private void menuButton_Click(object sender, EventArgs e)
         {
+            //returns to main menu
             Form form = this.FindForm();
 
             MenuScreen ms = new MenuScreen();

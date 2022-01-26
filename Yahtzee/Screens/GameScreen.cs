@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Taiyo + Charlie
+ * Yahtzee
+ * ICS4U
+ * Mr. T
+ * Jan 26, 2022
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -97,6 +103,7 @@ namespace Yahtzee
                 dice4FrozenBox.Visible = true;
                 dice5FrozenBox.Visible = true;
                 rollButton.Enabled = false;
+                topLabel.Text = "Click a Die To Freeze It!";
             }
             else
             {
@@ -109,6 +116,8 @@ namespace Yahtzee
                     }
                 }
                 rollButton.Enabled = true;
+
+                topLabel.Text = "Roll The Dice!";
             }
 
             if (rollsDone == true)
@@ -131,6 +140,8 @@ namespace Yahtzee
 
                 categoryHighlight1.Visible = true;
                 categoryHighlight2.Visible = true;
+
+                topLabel.Text = "Click a Box to Score!";
             }
             else if (rollsDone == false)
             {
@@ -148,6 +159,7 @@ namespace Yahtzee
                 yahtzeeLabel.Enabled = false;
                 chanceLabel.Enabled = false;
                 rollButton.Enabled = true;
+                topLabel.Text = "Roll The Dice!";
             }
         }
 
@@ -159,9 +171,10 @@ namespace Yahtzee
                 diceBoxList[i].BackgroundImage = diceImageList[diceList[i].value - 1];
             }
 
+            //displays which turn the player is on
             turnLabel.Text = $"Turn: {turn}/13 \nRolls: {rolls}/3";
         }
-        
+
         #region Button Click Methods
         private void rollButton_Click(object sender, EventArgs e)
         {
@@ -171,6 +184,7 @@ namespace Yahtzee
                 dice.Roll();
             }
 
+            //gets rid of one rolls until there are no left, then starting the next part of the turn
             rolls--;
             if (rolls == 0)
             {
@@ -181,6 +195,7 @@ namespace Yahtzee
 
         private void freezeButton_Click(object sender, EventArgs e)
         {
+            //changes so that the butons are able to be frozen
             freezeMode = !freezeMode;
         }
 
@@ -194,17 +209,18 @@ namespace Yahtzee
                 Highscore hs = new Highscore(name, score);
                 Yahtzee.scores.Add(hs);
 
-                // Goes to the game over screen
+                // Goes to the high score screen
                 Form form = this.FindForm();
 
-                GameOver go = new GameOver();
-                go.Location = new Point((form.Width - go.Width) / 2, (form.Height - go.Height) / 2);
+                HighscoreScreen hh = new HighscoreScreen();
+                hh.Location = new Point((form.Width - hh.Width) / 2, (form.Height - hh.Height) / 2);
 
-                form.Controls.Add(go);
+                form.Controls.Add(hh);
                 form.Controls.Remove(this);
             }
             else
             {
+                //If the bame entered is invalid, tells the player to re enter a name
                 nameEntryLabel.Text += $"\n\n\n\n\n\n\n\n\nPlease enter 3 uppercase characters.";
             }
         }
@@ -358,24 +374,35 @@ namespace Yahtzee
 
         private void NewTurn()
         {
+            //Adds to the turn counter
             turn++;
-            rolls = 3;
-            rollsDone = false;
-            freezeMode = false;
-
-            foreach (Dice Dice in diceList)
+            if (turn == 14)
             {
-                Dice.frozen = false;
+                //ends the game after 13 turns
+                OnEnd();
+            }
+            else
+            {
+                //Restarts the board for the next round
+                rolls = 3;
+                rollsDone = false;
+                freezeMode = false;
+
+                foreach (Dice Dice in diceList)
+                {
+                    Dice.frozen = false;
+                }
+
+                dice1FrozenBox.BackColor = Color.Gold;
+                dice2FrozenBox.BackColor = Color.Gold;
+                dice3FrozenBox.BackColor = Color.Gold;
+                dice4FrozenBox.BackColor = Color.Gold;
+                dice5FrozenBox.BackColor = Color.Gold;
+                categoryHighlight1.BackColor = Color.Gold;
+                categoryHighlight2.BackColor = Color.Gold;
+                Refresh();
             }
 
-            dice1FrozenBox.BackColor = Color.Gold;
-            dice2FrozenBox.BackColor = Color.Gold;
-            dice3FrozenBox.BackColor = Color.Gold;
-            dice4FrozenBox.BackColor = Color.Gold;
-            dice5FrozenBox.BackColor = Color.Gold;
-            categoryHighlight1.BackColor = Color.Gold;
-            categoryHighlight2 .BackColor = Color.Gold;
-            Refresh();
         }
 
     }

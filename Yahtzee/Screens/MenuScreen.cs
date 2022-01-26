@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Taiyo + Charlie
+ * Yahtzee
+ * ICS4U
+ * Mr. T
+ * Jan 26, 2022
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,7 +61,7 @@ namespace Yahtzee
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            //quits
+            //quits application
             Application.Exit();   
         }
     }
