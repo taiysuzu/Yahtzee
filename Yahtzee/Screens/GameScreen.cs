@@ -34,6 +34,9 @@ namespace Yahtzee
         //score / highscore objects
         int score;
         string name;
+
+        int topScoreBeforeBonus;
+        int totalTopScore;
         #endregion
 
         public GameScreen()
@@ -74,6 +77,8 @@ namespace Yahtzee
 
             //reset game values
             score = 0;
+            topScoreBeforeBonus = 0;
+            totalTopScore = 0;
 
             //begin game loop
             gameTimer.Enabled = true;
@@ -123,7 +128,7 @@ namespace Yahtzee
             }
 
             if (rollsDone == true)
-            {
+            {   //highlight and enable scoring boxes
                 acesLabel.Enabled = true;
                 twosLabel.Enabled = true;
                 threesLabel.Enabled = true;
@@ -146,7 +151,7 @@ namespace Yahtzee
                 topLabel.Text = "Click a Box to Score!";
             }
             else if (rollsDone == false)
-            {
+            {//disable scoring once new turn starts
                 acesLabel.Enabled = false;
                 twosLabel.Enabled = false;
                 threesLabel.Enabled = false;
@@ -164,6 +169,15 @@ namespace Yahtzee
 
                 topLabel.Text = "Roll the Dice!";
             }
+
+            if (rolls == 3)
+            {//disable freezing of dice before first roll, must roll at least once before choosing dice to keep
+                freezeButton.Enabled = false;
+            }
+            else
+            {
+                freezeButton.Enabled = true;
+            }
         }
 
         private void GameScreen_Paint(object sender, PaintEventArgs e)
@@ -176,8 +190,27 @@ namespace Yahtzee
 
             //displays turn and roll to screen
             turnLabel.Text = $"Turn: {turn}/13 \nRolls: {rolls}/3";
+
+            #region Score Totals
+            //display total score from upper section before bonus
+            topScoreBeforeBonusLabel.Text = $"{topScoreBeforeBonus}";
+            //check if bonus can be applied
+            if (topScoreBeforeBonus >= 63)
+            {//apply bonus
+                bonusLabel.Text = "35";
+                totalTopScore = topScoreBeforeBonus + 35;
+            }
+            else
+            {
+                bonusLabel.Text = "0";
+                totalTopScore = topScoreBeforeBonus;
+            }
+            //display total upper section score
+            totalTopScoreLabel.Text = $"{totalTopScore}";
+            totalTopScoreLabel2.Text = $"{totalTopScore}";
+            #endregion
         }
-        
+
         #region Button Click Methods
         private void rollButton_Click(object sender, EventArgs e)
         {
@@ -212,7 +245,7 @@ namespace Yahtzee
                 Highscore hs = new Highscore(name, score);
                 Yahtzee.scores.Add(hs);
 
-                // Goes to the game over screen
+                // Goes to the high score screen
                 Form form = this.FindForm();
 
                 HighscoreScreen go = new HighscoreScreen();
@@ -244,7 +277,7 @@ namespace Yahtzee
             exitButton.BringToFront();
             gameTimer.Enabled = false;
         }
-       
+
         private void resumeButton_Click(object sender, EventArgs e)
         {
             //starts the game timer, hides and disables pause menu and buttons
@@ -278,6 +311,7 @@ namespace Yahtzee
         #endregion
 
         #region Dice Box Click Methods
+        //below is code to freeze and unfreeze dice based on a click
         private void diceBox1_Click(object sender, EventArgs e)
         {
             if (freezeMode == true && diceList[0].frozen == false)
@@ -347,45 +381,52 @@ namespace Yahtzee
         #endregion
 
         #region Label Click Methods
+        //scoring methods
         private void acesLabel_Click(object sender, EventArgs e)
-        {
+        {//scores based on how many ones are in the dice list
             List<Dice> aces = diceList.FindAll(a => a.value == 1);
             acesLabel.Text = aces.Count.ToString();
+            topScoreBeforeBonus += aces.Count;
             NewTurn();
         }
 
         private void twosLabel_Click(object sender, EventArgs e)
-        {
+        {//scores based on how many twos are in the dice list
             List<Dice> twos = diceList.FindAll(a => a.value == 2);
             twosLabel.Text = (twos.Count * 2).ToString();
+            topScoreBeforeBonus += twos.Count * 2;
             NewTurn();
         }
 
         private void threesLabel_Click(object sender, EventArgs e)
-        {
+        {//scores based on how many threes are in the dice list
             List<Dice> threes = diceList.FindAll(a => a.value == 3);
             threesLabel.Text = (threes.Count * 3).ToString();
+            topScoreBeforeBonus += threes.Count * 3;
             NewTurn();
         }
 
         private void foursLabel_Click(object sender, EventArgs e)
-        {
+        {//scores based on how many fours are in the dice list
             List<Dice> fours = diceList.FindAll(a => a.value == 4);
             foursLabel.Text = (fours.Count * 4).ToString();
+            topScoreBeforeBonus += fours.Count * 4;
             NewTurn();
         }
 
         private void fivesLabel_Click(object sender, EventArgs e)
-        {
+        {//scores based on how many fives are in the dice list
             List<Dice> fives = diceList.FindAll(a => a.value == 5);
             fivesLabel.Text = (fives.Count * 5).ToString();
+            topScoreBeforeBonus += fives.Count * 5;
             NewTurn();
         }
 
         private void sixesLabel_Click(object sender, EventArgs e)
-        {
+        {//scores based on how many sixes are in the dice list
             List<Dice> sixes = diceList.FindAll(a => a.value == 6);
             sixesLabel.Text = (sixes.Count * 6).ToString();
+            topScoreBeforeBonus += sixes.Count * 6;
             NewTurn();
         }
         private void threeOfAKindLabel_Click(object sender, EventArgs e)
@@ -420,13 +461,14 @@ namespace Yahtzee
 
         private void NewTurn()
         {
+            //increment turn counter
             turn++;
             if (turn == 14)
-            {
+            {//ends game after 13 turns completed
                 OnEnd();
             }
             else
-            {
+            {//if game doesnt end, set up next turn with defaults
                 rolls = 3;
                 rollsDone = false;
                 freezeMode = false;
@@ -434,6 +476,7 @@ namespace Yahtzee
                 foreach (Dice Dice in diceList)
                 {
                     Dice.frozen = false;
+                    Dice.Roll();
                 }
 
                 dice1FrozenBox.BackColor = Color.Gold;

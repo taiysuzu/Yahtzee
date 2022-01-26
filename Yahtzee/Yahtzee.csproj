@@ -133,6 +133,7 @@
     <None Include="Resources\Die2.png" />
     <None Include="Resources\Die1.png" />
     <None Include="Resources\GameScreen.png" />
+    <None Include="Resources\Google-Noto-Emoji-Activities-52765-game-die.ico" />
     <Content Include="Resources\Highscores.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

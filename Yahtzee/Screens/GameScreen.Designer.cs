@@ -204,7 +204,6 @@ namespace Yahtzee
             // totalTopScoreLabel
             // 
             this.totalTopScoreLabel.BackColor = System.Drawing.Color.White;
-            this.totalTopScoreLabel.Enabled = false;
             this.totalTopScoreLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalTopScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalTopScoreLabel.Location = new System.Drawing.Point(297, 248);
@@ -307,7 +306,6 @@ namespace Yahtzee
             // totalBottomScoreLabel
             // 
             this.totalBottomScoreLabel.BackColor = System.Drawing.Color.White;
-            this.totalBottomScoreLabel.Enabled = false;
             this.totalBottomScoreLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalBottomScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalBottomScoreLabel.Location = new System.Drawing.Point(297, 497);
@@ -319,7 +317,6 @@ namespace Yahtzee
             // totalTopScoreLabel2
             // 
             this.totalTopScoreLabel2.BackColor = System.Drawing.Color.White;
-            this.totalTopScoreLabel2.Enabled = false;
             this.totalTopScoreLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalTopScoreLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalTopScoreLabel2.Location = new System.Drawing.Point(297, 533);
@@ -331,7 +328,6 @@ namespace Yahtzee
             // grandTotalLabel
             // 
             this.grandTotalLabel.BackColor = System.Drawing.Color.White;
-            this.grandTotalLabel.Enabled = false;
             this.grandTotalLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grandTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grandTotalLabel.Location = new System.Drawing.Point(297, 565);
@@ -343,7 +339,6 @@ namespace Yahtzee
             // bonusLabel
             // 
             this.bonusLabel.BackColor = System.Drawing.Color.White;
-            this.bonusLabel.Enabled = false;
             this.bonusLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bonusLabel.Location = new System.Drawing.Point(297, 220);
@@ -355,7 +350,6 @@ namespace Yahtzee
             // topScoreBeforeBonusLabel
             // 
             this.topScoreBeforeBonusLabel.BackColor = System.Drawing.Color.White;
-            this.topScoreBeforeBonusLabel.Enabled = false;
             this.topScoreBeforeBonusLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.topScoreBeforeBonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.topScoreBeforeBonusLabel.Location = new System.Drawing.Point(297, 192);
