@@ -202,6 +202,7 @@ namespace Yahtzee
             this.totalTopScoreLabel.BackColor = System.Drawing.Color.White;
             this.totalTopScoreLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalTopScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalTopScoreLabel.ForeColor = System.Drawing.Color.DarkGray;
             this.totalTopScoreLabel.Location = new System.Drawing.Point(297, 248);
             this.totalTopScoreLabel.Name = "totalTopScoreLabel";
             this.totalTopScoreLabel.Size = new System.Drawing.Size(60, 28);
@@ -304,6 +305,7 @@ namespace Yahtzee
             this.totalBottomScoreLabel.BackColor = System.Drawing.Color.White;
             this.totalBottomScoreLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalBottomScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalBottomScoreLabel.ForeColor = System.Drawing.Color.DarkGray;
             this.totalBottomScoreLabel.Location = new System.Drawing.Point(297, 497);
             this.totalBottomScoreLabel.Name = "totalBottomScoreLabel";
             this.totalBottomScoreLabel.Size = new System.Drawing.Size(60, 36);
@@ -315,6 +317,7 @@ namespace Yahtzee
             this.totalTopScoreLabel2.BackColor = System.Drawing.Color.White;
             this.totalTopScoreLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalTopScoreLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalTopScoreLabel2.ForeColor = System.Drawing.Color.DarkGray;
             this.totalTopScoreLabel2.Location = new System.Drawing.Point(297, 533);
             this.totalTopScoreLabel2.Name = "totalTopScoreLabel2";
             this.totalTopScoreLabel2.Size = new System.Drawing.Size(60, 32);
@@ -326,6 +329,7 @@ namespace Yahtzee
             this.grandTotalLabel.BackColor = System.Drawing.Color.White;
             this.grandTotalLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grandTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grandTotalLabel.ForeColor = System.Drawing.Color.DarkGray;
             this.grandTotalLabel.Location = new System.Drawing.Point(297, 565);
             this.grandTotalLabel.Name = "grandTotalLabel";
             this.grandTotalLabel.Size = new System.Drawing.Size(60, 32);
@@ -337,6 +341,7 @@ namespace Yahtzee
             this.bonusLabel.BackColor = System.Drawing.Color.White;
             this.bonusLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusLabel.ForeColor = System.Drawing.Color.DarkGray;
             this.bonusLabel.Location = new System.Drawing.Point(297, 220);
             this.bonusLabel.Name = "bonusLabel";
             this.bonusLabel.Size = new System.Drawing.Size(60, 28);
@@ -348,6 +353,7 @@ namespace Yahtzee
             this.topScoreBeforeBonusLabel.BackColor = System.Drawing.Color.White;
             this.topScoreBeforeBonusLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.topScoreBeforeBonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topScoreBeforeBonusLabel.ForeColor = System.Drawing.Color.DarkGray;
             this.topScoreBeforeBonusLabel.Location = new System.Drawing.Point(297, 192);
             this.topScoreBeforeBonusLabel.Name = "topScoreBeforeBonusLabel";
             this.topScoreBeforeBonusLabel.Size = new System.Drawing.Size(60, 28);

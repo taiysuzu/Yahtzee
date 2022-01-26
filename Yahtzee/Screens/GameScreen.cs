@@ -149,19 +149,58 @@ namespace Yahtzee
 
             if (rollsDone == true)
             {   //highlight and enable scoring boxes
-                acesLabel.Enabled = true;
-                twosLabel.Enabled = true;
-                threesLabel.Enabled = true;
-                foursLabel.Enabled = true;
-                fivesLabel.Enabled = true;
-                sixesLabel.Enabled = true;
-                threeOfAKindLabel.Enabled = true;
-                fourOfAkindLabel.Enabled = true;
-                fullHouseLabel.Enabled = true;
-                smStraightLabel.Enabled = true;
-                lgStraightLabel.Enabled = true;
-                yahtzeeLabel.Enabled = true;
-                chanceLabel.Enabled = true;
+                if (acesLabel.Text == "")
+                {
+                    acesLabel.Enabled = true;
+                }
+                if (twosLabel.Text == "")
+                {
+                    twosLabel.Enabled = true;
+                }
+                if (threesLabel.Text == "")
+                {
+                    threesLabel.Enabled = true;
+                }
+                if (foursLabel.Text == "")
+                {
+                    foursLabel.Enabled = true;
+                }
+                if (fivesLabel.Text == "")
+                {
+                    fivesLabel.Enabled = true;
+                }
+                if (sixesLabel.Text == "")
+                {
+                    sixesLabel.Enabled = true;
+                }
+                if (threeOfAKindLabel.Text == "")
+                {
+                    threeOfAKindLabel.Enabled = true;
+                }
+                if (fourOfAkindLabel.Text == "")
+                {
+                    fourOfAkindLabel.Enabled = true;
+                }
+                if (fullHouseLabel.Text == "")
+                {
+                    fullHouseLabel.Enabled = true;
+                }
+                if (smStraightLabel.Text == "")
+                {
+                    smStraightLabel.Enabled = true;
+                }
+                if (lgStraightLabel.Text == "")
+                {
+                    lgStraightLabel.Enabled = true;
+                }
+                if (yahtzeeLabel.Text == "")
+                {
+                    yahtzeeLabel.Enabled = true;
+                }
+                if (chanceLabel.Text == "")
+                {
+                    chanceLabel.Enabled = true;
+                }
 
                 rollButton.Enabled = false;
 
@@ -198,6 +237,7 @@ namespace Yahtzee
             {
                 freezeButton.Enabled = true;
             }
+
         }
 
         private void GameScreen_Paint(object sender, PaintEventArgs e)
@@ -465,14 +505,17 @@ namespace Yahtzee
             if (threekindValues[0].value == threekindValues[1].value && threekindValues[1].value == threekindValues[2].value)
             {
                 threeOfAKindLabel.Text = Convert.ToString(threeKindScore);
+                totalBottomScore += threeKindScore;
             }
             else if (threekindValues[1].value == threekindValues[2].value && threekindValues[2].value == threekindValues[3].value)
             {
                 threeOfAKindLabel.Text = Convert.ToString(threeKindScore);
+                totalBottomScore += threeKindScore;
             }
             else if (threekindValues[2].value == threekindValues[3].value && threekindValues[3].value == threekindValues[4].value)
             {
                 threeOfAKindLabel.Text = Convert.ToString(threeKindScore);
+                totalBottomScore += threeKindScore;
             }
             else
             {
@@ -508,6 +551,7 @@ namespace Yahtzee
             if (fourOfAkindLabel.Text != "0")
             {
                 fourOfAkindLabel.Text = Convert.ToString(fourKindScore);
+                totalBottomScore += fourKindScore;
             }
             NewTurn();
         }
@@ -522,6 +566,7 @@ namespace Yahtzee
                     if (fullHouseValues[3].value == fullHouseValues[4].value)
                     {
                         fullHouseLabel.Text = "25";
+                        totalBottomScore += 25;
                     }
                     else
                     {
@@ -533,6 +578,7 @@ namespace Yahtzee
                     if (fullHouseValues[3].value == fullHouseValues[4].value)
                     {
                         fullHouseLabel.Text = "25";
+                        totalBottomScore += 25;
                     }
                     else
                     {
@@ -547,10 +593,6 @@ namespace Yahtzee
             else
             {
                 fullHouseLabel.Text = "0";
-            }
-            if (fullHouseLabel.Text != "0")
-            {
-                fullHouseLabel.Text = "25";
             }
             NewTurn();
         }
@@ -576,6 +618,7 @@ namespace Yahtzee
             if (smStraightLabel.Text != "0")
             {
                 smStraightLabel.Text = "30";
+                totalBottomScore += 30;
             }
             NewTurn();
         }
@@ -593,6 +636,7 @@ namespace Yahtzee
             if (lgStraightLabel.Text != "0")
             {
                 lgStraightLabel.Text = "40";
+                totalBottomScore += 40;
             }
             NewTurn();
         }
@@ -609,6 +653,7 @@ namespace Yahtzee
             if (yahtzeeLabel.Text != "0")
             {
                 yahtzeeLabel.Text = "50";
+                totalBottomScore += 50;
             }
             NewTurn();
         }
@@ -620,6 +665,7 @@ namespace Yahtzee
                 chanceScore += Dice.value;
             }
             chanceLabel.Text = chanceScore.ToString();
+            totalBottomScore += chanceScore;
             NewTurn();
         }
         #endregion
