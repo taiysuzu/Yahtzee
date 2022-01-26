@@ -37,6 +37,7 @@ namespace Yahtzee
 
         int topScoreBeforeBonus;
         int totalTopScore;
+        int totalBottomScore;
         #endregion
 
         public GameScreen()
@@ -79,6 +80,7 @@ namespace Yahtzee
             score = 0;
             topScoreBeforeBonus = 0;
             totalTopScore = 0;
+            totalBottomScore = 0;
 
             //begin game loop
             gameTimer.Enabled = true;
@@ -208,6 +210,13 @@ namespace Yahtzee
             //display total upper section score
             totalTopScoreLabel.Text = $"{totalTopScore}";
             totalTopScoreLabel2.Text = $"{totalTopScore}";
+
+            //display total lower section score
+            totalBottomScoreLabel.Text = $"{totalBottomScore}";
+
+            //calculate and display overall total score
+            score = totalTopScore + totalBottomScore;
+            grandTotalLabel.Text = $"{score}";
             #endregion
         }
 
@@ -381,7 +390,7 @@ namespace Yahtzee
         #endregion
 
         #region Label Click Methods
-        //scoring methods
+        //scoring methods - upper six
         private void acesLabel_Click(object sender, EventArgs e)
         {//scores based on how many ones are in the dice list
             List<Dice> aces = diceList.FindAll(a => a.value == 1);
@@ -429,6 +438,8 @@ namespace Yahtzee
             topScoreBeforeBonus += sixes.Count * 6;
             NewTurn();
         }
+
+        //scoring methods - lower seven
         private void threeOfAKindLabel_Click(object sender, EventArgs e)
         {
 
