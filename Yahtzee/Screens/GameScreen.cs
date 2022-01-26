@@ -105,7 +105,7 @@ namespace Yahtzee
                 rollButton.Enabled = false;
                 topLabel.Text = "Click a Die To Freeze It!";
             }
-            else
+            else 
             {
 
                 for (int i = 0; i < 5; i++)
