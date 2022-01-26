@@ -39,7 +39,6 @@ namespace Yahtzee
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.nameInput = new System.Windows.Forms.TextBox();
             this.nameEntryLabel = new System.Windows.Forms.Label();
-            this.test_Endgame = new System.Windows.Forms.Button();
             this.nameInputButton = new System.Windows.Forms.Button();
             this.freezeButton = new System.Windows.Forms.Button();
             this.totalTopScoreLabel = new System.Windows.Forms.Label();
@@ -71,6 +70,11 @@ namespace Yahtzee
             this.categoryHighlight1 = new System.Windows.Forms.Label();
             this.categoryHighlight2 = new System.Windows.Forms.Label();
             this.topLabel = new System.Windows.Forms.Label();
+            this.pauseLabel = new System.Windows.Forms.Label();
+            this.pauseButtonLabel = new System.Windows.Forms.Label();
+            this.menuButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.resumeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diceBox5)).BeginInit();
@@ -149,7 +153,7 @@ namespace Yahtzee
             // nameInput
             // 
             this.nameInput.Enabled = false;
-            this.nameInput.Location = new System.Drawing.Point(900, 542);
+            this.nameInput.Location = new System.Drawing.Point(550, 290);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(100, 20);
             this.nameInput.TabIndex = 8;
@@ -161,23 +165,12 @@ namespace Yahtzee
             this.nameEntryLabel.Enabled = false;
             this.nameEntryLabel.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameEntryLabel.ForeColor = System.Drawing.Color.White;
-            this.nameEntryLabel.Location = new System.Drawing.Point(700, 302);
+            this.nameEntryLabel.Location = new System.Drawing.Point(350, 50);
             this.nameEntryLabel.Name = "nameEntryLabel";
             this.nameEntryLabel.Size = new System.Drawing.Size(500, 500);
             this.nameEntryLabel.TabIndex = 9;
             this.nameEntryLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.nameEntryLabel.Visible = false;
-            // 
-            // test_Endgame
-            // 
-            this.test_Endgame.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.test_Endgame.Location = new System.Drawing.Point(1047, 500);
-            this.test_Endgame.Name = "test_Endgame";
-            this.test_Endgame.Size = new System.Drawing.Size(150, 97);
-            this.test_Endgame.TabIndex = 10;
-            this.test_Endgame.Text = "testing button, triggers OnEnd";
-            this.test_Endgame.UseVisualStyleBackColor = true;
-            this.test_Endgame.Click += new System.EventHandler(this.test_Endgame_Click);
             // 
             // nameInputButton
             // 
@@ -185,7 +178,7 @@ namespace Yahtzee
             this.nameInputButton.FlatAppearance.BorderSize = 0;
             this.nameInputButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nameInputButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameInputButton.Location = new System.Drawing.Point(900, 574);
+            this.nameInputButton.Location = new System.Drawing.Point(550, 320);
             this.nameInputButton.Name = "nameInputButton";
             this.nameInputButton.Size = new System.Drawing.Size(100, 23);
             this.nameInputButton.TabIndex = 11;
@@ -546,12 +539,89 @@ namespace Yahtzee
             this.topLabel.Text = "Roll The Dice!";
             this.topLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pauseLabel
+            // 
+            this.pauseLabel.BackColor = System.Drawing.Color.Firebrick;
+            this.pauseLabel.Enabled = false;
+            this.pauseLabel.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pauseLabel.ForeColor = System.Drawing.Color.White;
+            this.pauseLabel.Location = new System.Drawing.Point(350, 50);
+            this.pauseLabel.Name = "pauseLabel";
+            this.pauseLabel.Size = new System.Drawing.Size(500, 500);
+            this.pauseLabel.TabIndex = 41;
+            this.pauseLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pauseLabel.Visible = false;
+            // 
+            // pauseButtonLabel
+            // 
+            this.pauseButtonLabel.BackColor = System.Drawing.Color.Crimson;
+            this.pauseButtonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pauseButtonLabel.ForeColor = System.Drawing.Color.White;
+            this.pauseButtonLabel.Location = new System.Drawing.Point(1140, 0);
+            this.pauseButtonLabel.Name = "pauseButtonLabel";
+            this.pauseButtonLabel.Size = new System.Drawing.Size(75, 68);
+            this.pauseButtonLabel.TabIndex = 42;
+            this.pauseButtonLabel.Text = "II";
+            this.pauseButtonLabel.Click += new System.EventHandler(this.pauseButtonLabel_Click);
+            // 
+            // menuButton
+            // 
+            this.menuButton.BackColor = System.Drawing.Color.Firebrick;
+            this.menuButton.FlatAppearance.BorderSize = 0;
+            this.menuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuButton.Font = new System.Drawing.Font("Segoe UI Historic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuButton.ForeColor = System.Drawing.Color.White;
+            this.menuButton.Location = new System.Drawing.Point(475, 225);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(250, 150);
+            this.menuButton.TabIndex = 43;
+            this.menuButton.Text = "Main Menu";
+            this.menuButton.UseVisualStyleBackColor = false;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.BackColor = System.Drawing.Color.Firebrick;
+            this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Segoe UI Historic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.Location = new System.Drawing.Point(475, 381);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(250, 150);
+            this.exitButton.TabIndex = 44;
+            this.exitButton.Text = "Exit to Desktop";
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // resumeButton
+            // 
+            this.resumeButton.BackColor = System.Drawing.Color.Firebrick;
+            this.resumeButton.FlatAppearance.BorderSize = 0;
+            this.resumeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resumeButton.Font = new System.Drawing.Font("Segoe UI Historic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resumeButton.ForeColor = System.Drawing.Color.White;
+            this.resumeButton.Location = new System.Drawing.Point(475, 69);
+            this.resumeButton.Name = "resumeButton";
+            this.resumeButton.Size = new System.Drawing.Size(250, 150);
+            this.resumeButton.TabIndex = 45;
+            this.resumeButton.Text = "Resume";
+            this.resumeButton.UseVisualStyleBackColor = false;
+            this.resumeButton.Click += new System.EventHandler(this.resumeButton_Click);
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Yahtzee.Properties.Resources.GameScreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Controls.Add(this.resumeButton);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.menuButton);
+            this.Controls.Add(this.nameEntryLabel);
+            this.Controls.Add(this.nameInputButton);
+            this.Controls.Add(this.nameInput);
+            this.Controls.Add(this.pauseButtonLabel);
             this.Controls.Add(this.topLabel);
             this.Controls.Add(this.turnLabel);
             this.Controls.Add(this.acesLabel);
@@ -574,14 +644,10 @@ namespace Yahtzee
             this.Controls.Add(this.threeOfAKindLabel);
             this.Controls.Add(this.totalTopScoreLabel);
             this.Controls.Add(this.freezeButton);
-            this.Controls.Add(this.test_Endgame);
             this.Controls.Add(this.rollButton);
             this.Controls.Add(this.diceBox5);
             this.Controls.Add(this.diceBox4);
             this.Controls.Add(this.diceBox1);
-            this.Controls.Add(this.nameInput);
-            this.Controls.Add(this.nameInputButton);
-            this.Controls.Add(this.nameEntryLabel);
             this.Controls.Add(this.dice1FrozenBox);
             this.Controls.Add(this.dice5FrozenBox);
             this.Controls.Add(this.dice4FrozenBox);
@@ -592,6 +658,7 @@ namespace Yahtzee
             this.Controls.Add(this.categoryHighlight1);
             this.Controls.Add(this.categoryHighlight2);
             this.Controls.Add(this.backgroundLabel);
+            this.Controls.Add(this.pauseLabel);
             this.DoubleBuffered = true;
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(1200, 600);
@@ -616,7 +683,6 @@ namespace Yahtzee
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.TextBox nameInput;
         private System.Windows.Forms.Label nameEntryLabel;
-        private System.Windows.Forms.Button test_Endgame;
         private System.Windows.Forms.Button nameInputButton;
         private System.Windows.Forms.Button freezeButton;
         private System.Windows.Forms.Label totalTopScoreLabel;
@@ -648,5 +714,10 @@ namespace Yahtzee
         private System.Windows.Forms.Label categoryHighlight1;
         private System.Windows.Forms.Label categoryHighlight2;
         private System.Windows.Forms.Label topLabel;
+        private System.Windows.Forms.Label pauseLabel;
+        private System.Windows.Forms.Label pauseButtonLabel;
+        private System.Windows.Forms.Button menuButton;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button resumeButton;
     }
 }

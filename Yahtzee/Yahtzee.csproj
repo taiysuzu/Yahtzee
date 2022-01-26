@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\pauseChamp.png" />
     <None Include="Resources\HowtoPlayScreen.png" />
     <None Include="Resources\hiscore %281%29.png" />
     <None Include="Resources\MenuScreen.png" />

@@ -64,6 +64,14 @@ namespace Yahtzee
             diceFrozenBoxList.Add(dice4FrozenBox);
             diceFrozenBoxList.Add(dice5FrozenBox);
 
+            //turn pause buttons invisible (bug where if they start visible=false they won't show up)
+            resumeButton.Enabled = false;
+            menuButton.Enabled = false;
+            exitButton.Enabled = false;
+            resumeButton.Visible = false;
+            menuButton.Visible = false;
+            exitButton.Visible = false;
+
             //reset game values
             score = 0;
 
@@ -209,10 +217,54 @@ namespace Yahtzee
             }
         }
 
-        private void test_Endgame_Click(object sender, EventArgs e)
+        #region Pause Menu Buttons
+        private void pauseButtonLabel_Click(object sender, EventArgs e)
         {
-            OnEnd();
+            //stops game timer, displays and enables pause menu and buttons
+            pauseLabel.Visible = true;
+            resumeButton.Enabled = true;
+            menuButton.Enabled = true;
+            exitButton.Enabled = true;
+            resumeButton.Visible = true;
+            menuButton.Visible = true;
+            exitButton.Visible = true;
+            pauseLabel.BringToFront();
+            menuButton.BringToFront();
+            resumeButton.BringToFront();
+            exitButton.BringToFront();
+            gameTimer.Enabled = false;
         }
+       
+        private void resumeButton_Click(object sender, EventArgs e)
+        {
+            //starts the game timer, hides and disables pause menu and buttons
+            gameTimer.Enabled = true;
+            pauseLabel.Visible = false;
+            resumeButton.Visible = false;
+            menuButton.Visible = false;
+            exitButton.Visible = false;
+            resumeButton.Enabled = false;
+            menuButton.Enabled = false;
+            exitButton.Enabled = false;
+        }
+
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+            //starts game / opens game screen
+            Form form = this.FindForm();
+
+            MenuScreen ms = new MenuScreen();
+            ms.Location = new Point((form.Width - ms.Width) / 2, (form.Height - ms.Height) / 2);
+
+            form.Controls.Add(ms);
+            form.Controls.Remove(this);
+        }
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            //quits the game
+            Application.Exit();
+        }
+        #endregion
         #endregion
 
         #region Dice Box Click Methods
@@ -373,10 +425,10 @@ namespace Yahtzee
             dice3FrozenBox.BackColor = Color.Gold;
             dice4FrozenBox.BackColor = Color.Gold;
             dice5FrozenBox.BackColor = Color.Gold;
-            categoryHighlight1.BackColor = Color.Gold;
-            categoryHighlight2 .BackColor = Color.Gold;
+
+            categoryHighlight1.Visible = false;
+            categoryHighlight2.Visible = false;
             Refresh();
         }
-
     }
 }

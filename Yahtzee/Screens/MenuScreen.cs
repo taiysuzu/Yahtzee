@@ -55,7 +55,7 @@ namespace Yahtzee
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            //quits
+            //quits the game
             Application.Exit();   
         }
     }
