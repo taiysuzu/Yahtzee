@@ -45,7 +45,7 @@ namespace Yahtzee
             this.threeOfAKindLabel = new System.Windows.Forms.Label();
             this.fourOfAkindLabel = new System.Windows.Forms.Label();
             this.smStraightLabel = new System.Windows.Forms.Label();
-            this.fullhouseLabel = new System.Windows.Forms.Label();
+            this.fullHouseLabel = new System.Windows.Forms.Label();
             this.lgStraightLabel = new System.Windows.Forms.Label();
             this.yahtzeeLabel = new System.Windows.Forms.Label();
             this.chanceLabel = new System.Windows.Forms.Label();
@@ -152,12 +152,10 @@ namespace Yahtzee
             // 
             // nameInput
             // 
-            this.nameInput.Enabled = false;
             this.nameInput.Location = new System.Drawing.Point(550, 290);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(100, 20);
             this.nameInput.TabIndex = 8;
-            this.nameInput.Visible = false;
             // 
             // nameEntryLabel
             // 
@@ -174,7 +172,6 @@ namespace Yahtzee
             // 
             // nameInputButton
             // 
-            this.nameInputButton.Enabled = false;
             this.nameInputButton.FlatAppearance.BorderSize = 0;
             this.nameInputButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nameInputButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,7 +181,6 @@ namespace Yahtzee
             this.nameInputButton.TabIndex = 11;
             this.nameInputButton.Text = "Save Score";
             this.nameInputButton.UseVisualStyleBackColor = true;
-            this.nameInputButton.Visible = false;
             this.nameInputButton.Click += new System.EventHandler(this.nameInputButton_Click);
             // 
             // freezeButton
@@ -251,18 +247,18 @@ namespace Yahtzee
             this.smStraightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.smStraightLabel.Click += new System.EventHandler(this.smStraightLabel_Click);
             // 
-            // fullhouseLabel
+            // fullHouseLabel
             // 
-            this.fullhouseLabel.BackColor = System.Drawing.Color.White;
-            this.fullhouseLabel.Enabled = false;
-            this.fullhouseLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fullhouseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullhouseLabel.Location = new System.Drawing.Point(297, 357);
-            this.fullhouseLabel.Name = "fullhouseLabel";
-            this.fullhouseLabel.Size = new System.Drawing.Size(60, 28);
-            this.fullhouseLabel.TabIndex = 16;
-            this.fullhouseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.fullhouseLabel.Click += new System.EventHandler(this.fullhouseLabel_Click);
+            this.fullHouseLabel.BackColor = System.Drawing.Color.White;
+            this.fullHouseLabel.Enabled = false;
+            this.fullHouseLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fullHouseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullHouseLabel.Location = new System.Drawing.Point(297, 357);
+            this.fullHouseLabel.Name = "fullHouseLabel";
+            this.fullHouseLabel.Size = new System.Drawing.Size(60, 28);
+            this.fullHouseLabel.TabIndex = 16;
+            this.fullHouseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.fullHouseLabel.Click += new System.EventHandler(this.fullhouseLabel_Click);
             // 
             // lgStraightLabel
             // 
@@ -609,12 +605,12 @@ namespace Yahtzee
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Yahtzee.Properties.Resources.GameScreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Controls.Add(this.nameInputButton);
+            this.Controls.Add(this.nameInput);
             this.Controls.Add(this.resumeButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.nameEntryLabel);
-            this.Controls.Add(this.nameInputButton);
-            this.Controls.Add(this.nameInput);
             this.Controls.Add(this.pauseButtonLabel);
             this.Controls.Add(this.topLabel);
             this.Controls.Add(this.turnLabel);
@@ -632,7 +628,7 @@ namespace Yahtzee
             this.Controls.Add(this.chanceLabel);
             this.Controls.Add(this.yahtzeeLabel);
             this.Controls.Add(this.lgStraightLabel);
-            this.Controls.Add(this.fullhouseLabel);
+            this.Controls.Add(this.fullHouseLabel);
             this.Controls.Add(this.smStraightLabel);
             this.Controls.Add(this.fourOfAkindLabel);
             this.Controls.Add(this.threeOfAKindLabel);
@@ -683,7 +679,7 @@ namespace Yahtzee
         private System.Windows.Forms.Label threeOfAKindLabel;
         private System.Windows.Forms.Label fourOfAkindLabel;
         private System.Windows.Forms.Label smStraightLabel;
-        private System.Windows.Forms.Label fullhouseLabel;
+        private System.Windows.Forms.Label fullHouseLabel;
         private System.Windows.Forms.Label lgStraightLabel;
         private System.Windows.Forms.Label yahtzeeLabel;
         private System.Windows.Forms.Label chanceLabel;

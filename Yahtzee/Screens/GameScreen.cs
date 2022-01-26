@@ -34,10 +34,13 @@ namespace Yahtzee
         //score / highscore objects
         int score;
         string name;
-
+        int chanceScore;
         int topScoreBeforeBonus;
         int totalTopScore;
         int totalBottomScore;
+        int fourKindScore;
+        int threeKindScore;
+
         #endregion
 
         public GameScreen()
@@ -76,11 +79,21 @@ namespace Yahtzee
             menuButton.Visible = false;
             exitButton.Visible = false;
 
+            nameEntryLabel.Enabled = false;
+            nameInput.Enabled = false;
+            nameInputButton.Enabled = false;
+            nameEntryLabel.Visible = false;
+            nameInput.Visible = false;
+            nameInputButton.Visible = false;
+
             //reset game values
             score = 0;
             topScoreBeforeBonus = 0;
             totalTopScore = 0;
             totalBottomScore = 0;
+            chanceScore = 0;
+            fourKindScore = 0;
+            threeKindScore = 0;
 
             //begin game loop
             gameTimer.Enabled = true;
@@ -88,6 +101,9 @@ namespace Yahtzee
 
         private void OnEnd()
         {
+            //disable pause button
+            pauseButtonLabel.Enabled = false;
+
             //stop game timer 
             gameTimer.Enabled = false;
 
@@ -98,6 +114,8 @@ namespace Yahtzee
             nameEntryLabel.Visible = true;
             nameInput.Visible = true;
             nameInputButton.Visible = true;
+            nameInput.BringToFront();
+            nameInputButton.BringToFront();
 
             nameEntryLabel.Text = $"\n\n\n\n\n\n\nYou achieved a score of {score}! \n\nEnter your initials below.";
         }
@@ -139,7 +157,7 @@ namespace Yahtzee
                 sixesLabel.Enabled = true;
                 threeOfAKindLabel.Enabled = true;
                 fourOfAkindLabel.Enabled = true;
-                fullhouseLabel.Enabled = true;
+                fullHouseLabel.Enabled = true;
                 smStraightLabel.Enabled = true;
                 lgStraightLabel.Enabled = true;
                 yahtzeeLabel.Enabled = true;
@@ -162,7 +180,7 @@ namespace Yahtzee
                 sixesLabel.Enabled = false;
                 threeOfAKindLabel.Enabled = false;
                 fourOfAkindLabel.Enabled = false;
-                fullhouseLabel.Enabled = false;
+                fullHouseLabel.Enabled = false;
                 smStraightLabel.Enabled = false;
                 lgStraightLabel.Enabled = false;
                 yahtzeeLabel.Enabled = false;
@@ -442,31 +460,167 @@ namespace Yahtzee
         //scoring methods - lower seven
         private void threeOfAKindLabel_Click(object sender, EventArgs e)
         {
-
+            List<Dice> threekindValues = diceList.OrderBy(a => a.value).ToList();
+            threeKindScore = threekindValues[0].value + threekindValues[1].value + threekindValues[2].value + threekindValues[3].value + threekindValues[4].value;
+            if (threekindValues[0].value == threekindValues[1].value && threekindValues[1].value == threekindValues[2].value)
+            {
+                threeOfAKindLabel.Text = Convert.ToString(threeKindScore);
+            }
+            else if (threekindValues[1].value == threekindValues[2].value && threekindValues[2].value == threekindValues[3].value)
+            {
+                threeOfAKindLabel.Text = Convert.ToString(threeKindScore);
+            }
+            else if (threekindValues[2].value == threekindValues[3].value && threekindValues[3].value == threekindValues[4].value)
+            {
+                threeOfAKindLabel.Text = Convert.ToString(threeKindScore);
+            }
+            else
+            {
+                threeOfAKindLabel.Text = "0";
+            }
+            NewTurn();
         }
+
         private void fourOfAkindLabel_Click(object sender, EventArgs e)
         {
-
+            List<Dice> fourkindValues = diceList.OrderBy(a => a.value).ToList();
+            fourKindScore = fourkindValues[0].value + fourkindValues[1].value + fourkindValues[2].value + fourkindValues[3].value + fourkindValues[4].value;
+            if (fourkindValues[0].value == fourkindValues[1].value)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    if (fourkindValues[i].value != fourkindValues[i + 1].value)
+                    {
+                        fourOfAkindLabel.Text = "0";
+                    }
+                }
+            }
+            else if (fourkindValues[0].value != fourkindValues[1].value)
+            {
+                for (int i = 1; i < 4; i++)
+                {
+                    if (fourkindValues[i].value != fourkindValues[i + 1].value)
+                    {
+                        fourOfAkindLabel.Text = "0";
+                    }
+                }
+            }
+            if (fourOfAkindLabel.Text != "0")
+            {
+                fourOfAkindLabel.Text = Convert.ToString(fourKindScore);
+            }
+            NewTurn();
         }
+
         private void fullhouseLabel_Click(object sender, EventArgs e)
         {
-
+            List<Dice> fullHouseValues = diceList.OrderBy(a => a.value).ToList();
+            if (fullHouseValues[0].value == fullHouseValues[1].value)
+            {
+                if (fullHouseValues[1].value == fullHouseValues[2].value)
+                {
+                    if (fullHouseValues[3].value == fullHouseValues[4].value)
+                    {
+                        fullHouseLabel.Text = "25";
+                    }
+                    else
+                    {
+                        fullHouseLabel.Text = "0";
+                    }
+                }
+                else if (fullHouseValues[2].value == fullHouseValues[3].value)
+                {
+                    if (fullHouseValues[3].value == fullHouseValues[4].value)
+                    {
+                        fullHouseLabel.Text = "25";
+                    }
+                    else
+                    {
+                        fullHouseLabel.Text = "0";
+                    }
+                }
+                else
+                {
+                    fullHouseLabel.Text = "0";
+                }
+            }
+            else
+            {
+                fullHouseLabel.Text = "0";
+            }
+            if (fullHouseLabel.Text != "0")
+            {
+                fullHouseLabel.Text = "25";
+            }
+            NewTurn();
         }
+
         private void smStraightLabel_Click(object sender, EventArgs e)
         {
-
+            List<Dice> smStraightValues = diceList.OrderBy(a => a.value).ToList();
+            for (int i = 0; i < 4; i++)
+            {
+                if (smStraightValues[i].value == smStraightValues[i + 1].value)
+                {
+                    smStraightValues.Add(smStraightValues[i]);
+                    smStraightValues.Remove(smStraightValues[i]);
+                }
+            }
+            for (int j = 0; j < 3; j++)
+            {
+                if (smStraightValues[j].value - smStraightValues[j + 1].value != -1)
+                {
+                    smStraightLabel.Text = "0";
+                }
+            }
+            if (smStraightLabel.Text != "0")
+            {
+                smStraightLabel.Text = "30";
+            }
+            NewTurn();
         }
+
         private void lgStraightLabel_Click(object sender, EventArgs e)
         {
-
+            List<Dice> lgStraightValues = diceList.OrderBy(a => a.value).ToList();
+            for (int i = 0; i < 4; i++)
+            {
+                if (lgStraightValues[i].value - lgStraightValues[i + 1].value != -1)
+                {
+                    lgStraightLabel.Text = "0";
+                }
+            }
+            if (lgStraightLabel.Text != "0")
+            {
+                lgStraightLabel.Text = "40";
+            }
+            NewTurn();
         }
+
         private void yahtzeeLabel_Click(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < 4; i++)
+            {
+                if (diceList[i].value != diceList[i + 1].value)
+                {
+                    yahtzeeLabel.Text = "0";
+                }
+            }
+            if (yahtzeeLabel.Text != "0")
+            {
+                yahtzeeLabel.Text = "50";
+            }
+            NewTurn();
         }
+
         private void chanceLabel_Click(object sender, EventArgs e)
         {
-
+            foreach (Dice Dice in diceList)
+            {
+                chanceScore += Dice.value;
+            }
+            chanceLabel.Text = chanceScore.ToString();
+            NewTurn();
         }
         #endregion
 
