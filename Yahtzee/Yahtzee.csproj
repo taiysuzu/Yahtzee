@@ -48,12 +48,6 @@
   <ItemGroup>
     <Compile Include="Classes\Dice.cs" />
     <Compile Include="Classes\Highscore.cs" />
-    <Compile Include="Screens\GameOver.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Screens\GameOver.Designer.cs">
-      <DependentUpon>GameOver.cs</DependentUpon>
-    </Compile>
     <Compile Include="Yahtzee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,9 +80,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Screens\GameOver.resx">
-      <DependentUpon>GameOver.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Yahtzee.resx">
       <DependentUpon>Yahtzee.cs</DependentUpon>
     </EmbeddedResource>

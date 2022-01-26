@@ -99,16 +99,18 @@ namespace Yahtzee
         {
             if (freezeMode == true)
             {
+                //show freeze mde indicators
                 dice1FrozenBox.Visible = true;
                 dice2FrozenBox.Visible = true;
                 dice3FrozenBox.Visible = true;
                 dice4FrozenBox.Visible = true;
                 dice5FrozenBox.Visible = true;
                 rollButton.Enabled = false;
+                topLabel.Text = "Click a Die to Freeze It!";
             }
             else
             {
-
+                //hide all non-frozen dice outlines
                 for (int i = 0; i < 5; i++)
                 {
                     if (diceList[i].frozen == false)
@@ -117,6 +119,7 @@ namespace Yahtzee
                     }
                 }
                 rollButton.Enabled = true;
+                topLabel.Text = "Roll the Dice!";
             }
 
             if (rollsDone == true)
@@ -139,6 +142,8 @@ namespace Yahtzee
 
                 categoryHighlight1.Visible = true;
                 categoryHighlight2.Visible = true;
+
+                topLabel.Text = "Click a Box to Score!";
             }
             else if (rollsDone == false)
             {
@@ -156,6 +161,8 @@ namespace Yahtzee
                 yahtzeeLabel.Enabled = false;
                 chanceLabel.Enabled = false;
                 rollButton.Enabled = true;
+
+                topLabel.Text = "Roll the Dice!";
             }
         }
 
@@ -167,6 +174,7 @@ namespace Yahtzee
                 diceBoxList[i].BackgroundImage = diceImageList[diceList[i].value - 1];
             }
 
+            //displays turn and roll to screen
             turnLabel.Text = $"Turn: {turn}/13 \nRolls: {rolls}/3";
         }
         
@@ -179,9 +187,10 @@ namespace Yahtzee
                 dice.Roll();
             }
 
+            //subtract one from remaining rolls
             rolls--;
             if (rolls == 0)
-            {
+            {//if rollsdone =
                 rollsDone = true;
             }
             Refresh();
@@ -189,6 +198,7 @@ namespace Yahtzee
 
         private void freezeButton_Click(object sender, EventArgs e)
         {
+            //enters freeze mode to be able to save dice rolls
             freezeMode = !freezeMode;
         }
 
@@ -205,7 +215,7 @@ namespace Yahtzee
                 // Goes to the game over screen
                 Form form = this.FindForm();
 
-                GameOver go = new GameOver();
+                HighscoreScreen go = new HighscoreScreen();
                 go.Location = new Point((form.Width - go.Width) / 2, (form.Height - go.Height) / 2);
 
                 form.Controls.Add(go);
@@ -411,24 +421,31 @@ namespace Yahtzee
         private void NewTurn()
         {
             turn++;
-            rolls = 3;
-            rollsDone = false;
-            freezeMode = false;
-
-            foreach (Dice Dice in diceList)
+            if (turn == 14)
             {
-                Dice.frozen = false;
+                OnEnd();
             }
+            else
+            {
+                rolls = 3;
+                rollsDone = false;
+                freezeMode = false;
 
-            dice1FrozenBox.BackColor = Color.Gold;
-            dice2FrozenBox.BackColor = Color.Gold;
-            dice3FrozenBox.BackColor = Color.Gold;
-            dice4FrozenBox.BackColor = Color.Gold;
-            dice5FrozenBox.BackColor = Color.Gold;
+                foreach (Dice Dice in diceList)
+                {
+                    Dice.frozen = false;
+                }
 
-            categoryHighlight1.Visible = false;
-            categoryHighlight2.Visible = false;
-            Refresh();
+                dice1FrozenBox.BackColor = Color.Gold;
+                dice2FrozenBox.BackColor = Color.Gold;
+                dice3FrozenBox.BackColor = Color.Gold;
+                dice4FrozenBox.BackColor = Color.Gold;
+                dice5FrozenBox.BackColor = Color.Gold;
+
+                categoryHighlight1.Visible = false;
+                categoryHighlight2.Visible = false;
+                Refresh();
+            }
         }
     }
 }
