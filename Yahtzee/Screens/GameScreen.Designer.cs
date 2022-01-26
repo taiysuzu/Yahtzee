@@ -193,7 +193,7 @@ namespace Yahtzee
             this.freezeButton.Name = "freezeButton";
             this.freezeButton.Size = new System.Drawing.Size(180, 23);
             this.freezeButton.TabIndex = 12;
-            this.freezeButton.Text = "Freeze Dice";
+            this.freezeButton.Text = "Enter Freeze Mode";
             this.freezeButton.UseVisualStyleBackColor = false;
             this.freezeButton.Click += new System.EventHandler(this.freezeButton_Click);
             // 

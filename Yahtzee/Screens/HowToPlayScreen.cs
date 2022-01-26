@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* Taiyo + Charlie
+ * Yahtzee
+ * ICS4U
+ * Mr. T
+ * Jan 26, 2022
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

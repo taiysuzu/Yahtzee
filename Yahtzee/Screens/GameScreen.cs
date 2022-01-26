@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* Taiyo + Charlie
+ * Yahtzee
+ * ICS4U
+ * Mr. T
+ * Jan 26, 2022
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +38,7 @@ namespace Yahtzee
         List<Image> diceImageList = new List<Image> { Properties.Resources.Die1, Properties.Resources.Die2, Properties.Resources.Die3,
             Properties.Resources.Die4, Properties.Resources.Die5, Properties.Resources.Die6};
 
-        //score / highscore objects
+        //score / highscore variables
         int score;
         string name;
         int chanceScore;
@@ -58,7 +65,7 @@ namespace Yahtzee
                 diceList.Add(dice);
             }
 
-            //add all dice picture boxes and labels to lists
+            //add all dice picture boxes and labels to respective lists
             diceBoxList.Add(diceBox1);
             diceBoxList.Add(diceBox2);
             diceBoxList.Add(diceBox3);
@@ -86,7 +93,7 @@ namespace Yahtzee
             nameInput.Visible = false;
             nameInputButton.Visible = false;
 
-            //reset game values
+            //set initial game values
             score = 0;
             topScoreBeforeBonus = 0;
             totalTopScore = 0;
@@ -124,7 +131,7 @@ namespace Yahtzee
         {
             if (freezeMode == true)
             {
-                //show freeze mde indicators
+                //show freeze mode indicators
                 dice1FrozenBox.Visible = true;
                 dice2FrozenBox.Visible = true;
                 dice3FrozenBox.Visible = true;
@@ -132,8 +139,9 @@ namespace Yahtzee
                 dice5FrozenBox.Visible = true;
                 rollButton.Enabled = false;
                 topLabel.Text = "Click a Die to Freeze It!";
+                freezeButton.Text = "Exit Freeze Mode";
             }
-            else
+            else if (freezeMode == false)
             {
                 //hide all non-frozen dice outlines
                 for (int i = 0; i < 5; i++)
@@ -144,11 +152,12 @@ namespace Yahtzee
                     }
                 }
                 rollButton.Enabled = true;
+                freezeButton.Text = "Enter Freeze Mode";
                 topLabel.Text = "Roll the Dice!";
             }
 
             if (rollsDone == true)
-            {   //highlight and enable scoring boxes
+            {   //highlight and enable scoring boxes if they haven't been filled
                 if (acesLabel.Text == "")
                 {
                     acesLabel.Enabled = true;
@@ -203,6 +212,7 @@ namespace Yahtzee
                 }
 
                 rollButton.Enabled = false;
+                freezeButton.Enabled = false;
 
                 categoryHighlight1.Visible = true;
                 categoryHighlight2.Visible = true;
@@ -225,8 +235,7 @@ namespace Yahtzee
                 yahtzeeLabel.Enabled = false;
                 chanceLabel.Enabled = false;
                 rollButton.Enabled = true;
-
-                topLabel.Text = "Roll the Dice!";
+                freezeButton.Enabled = true;
             }
 
             if (rolls == 3)
@@ -327,7 +336,6 @@ namespace Yahtzee
             }
         }
 
-        #region Pause Menu Buttons
         private void pauseButtonLabel_Click(object sender, EventArgs e)
         {
             //stops game timer, displays and enables pause menu and buttons
@@ -375,10 +383,9 @@ namespace Yahtzee
             Application.Exit();
         }
         #endregion
-        #endregion
 
         #region Dice Box Click Methods
-        //below is code to freeze and unfreeze dice based on a click
+        //below is code to freeze and unfreeze dice based on if they are clicked during freeze mode
         private void diceBox1_Click(object sender, EventArgs e)
         {
             if (freezeMode == true && diceList[0].frozen == false)
@@ -499,7 +506,7 @@ namespace Yahtzee
 
         //scoring methods - lower seven
         private void threeOfAKindLabel_Click(object sender, EventArgs e)
-        {
+        {//adds sum of dice values to score if 3 dice values equal one another
             List<Dice> threekindValues = diceList.OrderBy(a => a.value).ToList();
             threeKindScore = threekindValues[0].value + threekindValues[1].value + threekindValues[2].value + threekindValues[3].value + threekindValues[4].value;
             if (threekindValues[0].value == threekindValues[1].value && threekindValues[1].value == threekindValues[2].value)
@@ -525,7 +532,7 @@ namespace Yahtzee
         }
 
         private void fourOfAkindLabel_Click(object sender, EventArgs e)
-        {
+        {//adds sum of dice values to score if 4 dice values equal one another
             List<Dice> fourkindValues = diceList.OrderBy(a => a.value).ToList();
             fourKindScore = fourkindValues[0].value + fourkindValues[1].value + fourkindValues[2].value + fourkindValues[3].value + fourkindValues[4].value;
             if (fourkindValues[0].value == fourkindValues[1].value)
@@ -557,7 +564,7 @@ namespace Yahtzee
         }
 
         private void fullhouseLabel_Click(object sender, EventArgs e)
-        {
+        {//gives 25 points if dice values are a full house. (2 dice of value x and 3 dice of value y)
             List<Dice> fullHouseValues = diceList.OrderBy(a => a.value).ToList();
             if (fullHouseValues[0].value == fullHouseValues[1].value)
             {
@@ -598,7 +605,7 @@ namespace Yahtzee
         }
 
         private void smStraightLabel_Click(object sender, EventArgs e)
-        {
+        {//gives 35 points if 4 of 5 dice are in a consecutive order. sends any duplicate numbers to end of list to be ignored.
             List<Dice> smStraightValues = diceList.OrderBy(a => a.value).ToList();
             for (int i = 0; i < 4; i++)
             {
@@ -624,7 +631,7 @@ namespace Yahtzee
         }
 
         private void lgStraightLabel_Click(object sender, EventArgs e)
-        {
+        {//gives 40 points if all 5 dice are in a consecutive order. (1,2,3,4,5/2,3,4,5,6)
             List<Dice> lgStraightValues = diceList.OrderBy(a => a.value).ToList();
             for (int i = 0; i < 4; i++)
             {
@@ -642,7 +649,7 @@ namespace Yahtzee
         }
 
         private void yahtzeeLabel_Click(object sender, EventArgs e)
-        {
+        {//gives 50 points if all dice values are equal to one another
             for (int i = 0; i < 4; i++)
             {
                 if (diceList[i].value != diceList[i + 1].value)
@@ -659,7 +666,7 @@ namespace Yahtzee
         }
 
         private void chanceLabel_Click(object sender, EventArgs e)
-        {
+        {//adds sum of dice values to score
             foreach (Dice Dice in diceList)
             {
                 chanceScore += Dice.value;
@@ -687,7 +694,6 @@ namespace Yahtzee
                 foreach (Dice Dice in diceList)
                 {
                     Dice.frozen = false;
-                    Dice.Roll();
                 }
 
                 dice1FrozenBox.BackColor = Color.Gold;
@@ -698,6 +704,9 @@ namespace Yahtzee
 
                 categoryHighlight1.Visible = false;
                 categoryHighlight2.Visible = false;
+
+                topLabel.Text = "Roll the Dice!";
+
                 Refresh();
             }
         }
